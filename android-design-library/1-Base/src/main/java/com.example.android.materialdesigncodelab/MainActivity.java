@@ -18,11 +18,17 @@ package com.example.android.materialdesigncodelab;
 
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
+import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+
+import com.example.android.materialdesigncodelab.adapters.FragmentAdapter;
+import com.example.android.materialdesigncodelab.fragments.CardContentFragment;
+import com.example.android.materialdesigncodelab.fragments.ListContentFrafment;
+import com.example.android.materialdesigncodelab.fragments.TitleContentFragment;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -49,11 +55,15 @@ public class MainActivity extends AppCompatActivity {
 
         ViewPager viewPager = (ViewPager) findViewById(R.id.view_pager);
         setupViewPager(viewPager);
-
     }
 
 
     private void setupViewPager(ViewPager viewPager) {
+        FragmentAdapter adapter = new FragmentAdapter(getSupportFragmentManager());
+        adapter.addFragment(new ListContentFrafment(), "List");
+        adapter.addFragment(new TitleContentFragment(), "Tile");
+        adapter.addFragment(new CardContentFragment(), "Card");
+        viewPager.setAdapter(adapter);
 
     }
 
