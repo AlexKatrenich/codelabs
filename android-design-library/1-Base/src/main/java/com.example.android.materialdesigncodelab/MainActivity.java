@@ -18,6 +18,7 @@ package com.example.android.materialdesigncodelab;
 
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
@@ -45,6 +46,15 @@ public class MainActivity extends AppCompatActivity {
         tabs.addTab(tabs.newTab().setText("Tab 1"));
         tabs.addTab(tabs.newTab().setText("Tab 2"));
         tabs.addTab(tabs.newTab().setText("Tab 3"));
+
+        ViewPager viewPager = (ViewPager) findViewById(R.id.view_pager);
+        setupViewPager(viewPager);
+
+    }
+
+
+    private void setupViewPager(ViewPager viewPager) {
+
     }
 
     @Override
