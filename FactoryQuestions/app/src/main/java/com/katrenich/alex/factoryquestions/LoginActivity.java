@@ -17,11 +17,11 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void init() {
-        // ініціалізація тулбару
+        // ініціалізація Toolbar
         toolbar = findViewById(R.id.login_activity_toolbar);
         setSupportActionBar(toolbar);
 
-        // ініціалізація меню меню з двома вкладками
+        // ініціалізація TabLayout та додавання двох вкладок
         tabs = findViewById(R.id.tabs);
         tabs.addTab(tabs.newTab().setText("Tab 1"));
         tabs.addTab(tabs.newTab().setText("Tab 2"));
