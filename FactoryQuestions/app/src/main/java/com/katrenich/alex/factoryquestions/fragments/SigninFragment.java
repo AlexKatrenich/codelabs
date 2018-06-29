@@ -8,7 +8,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.katrenich.alex.factoryquestions.R;
+import com.katrenich.alex.factoryquestions.*;
+
 
 public class SigninFragment extends Fragment {
 
