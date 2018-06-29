@@ -7,32 +7,32 @@
 
 
     <android.support.design.widget.TextInputLayout
-        android:id="@+id/til_login"
+        android:id="@+id/til_email_sign_in_holder"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/text_input_margins">
 
         <android.support.design.widget.TextInputEditText
-            android:id="@+id/tiet_login_text"
+            android:id="@+id/tiet_email_sign_in_data"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Login"
+            android:hint="@string/sign_email_input"
             android:inputType="textEmailAddress"
             />
     </android.support.design.widget.TextInputLayout>
 
     <android.support.design.widget.TextInputLayout
-        android:id="@+id/til_password"
+        android:id="@+id/til_pas_sign_in_holder"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/text_input_margins"
         app:passwordToggleEnabled="true">
 
         <android.support.design.widget.TextInputEditText
-            android:id="@+id/tiet_password_data"
+            android:id="@+id/tiet_pas_sign_in_data"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Password"
+            android:hint="@string/sign_password_input"
             android:inputType="textPassword"/>
     </android.support.design.widget.TextInputLayout>
 </LinearLayout>
