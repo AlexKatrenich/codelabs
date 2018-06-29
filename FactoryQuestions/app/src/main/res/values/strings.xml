@@ -1,5 +1,10 @@
 <resources>
     <string name="app_name">FactoryQuestions</string>
     <string name="log_collapsing_toolbar_title">Authorization</string>
+    <string name="sign_email_input">Email</string>
+    <string name="sign_password_input">Password</string>
+    <string name="sign_password_confirm">Confirm password</string>
+    <string name="sign_in_tab_layout_text">SIGN IN</string>
+    <string name="sign_up_tab_layout_text">SIGN UP</string>
 
 </resources>

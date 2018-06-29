@@ -12,14 +12,14 @@ import com.katrenich.alex.factoryquestions.fragments.LoginFragment;
 import com.katrenich.alex.factoryquestions.fragments.SigninFragment;
 
 
-public class LoginActivity extends AppCompatActivity {
+public class SignActivity extends AppCompatActivity {
     private Toolbar toolbar;
     private TabLayout tabs;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
+        setContentView(R.layout.activity_sign);
         init();
     }
 
@@ -39,8 +39,8 @@ public class LoginActivity extends AppCompatActivity {
 
     private void setupViewPager(ViewPager viewPager) {
         LoginRecyclerAdapter adapter = new LoginRecyclerAdapter(getSupportFragmentManager());
-        adapter.addFragment(new LoginFragment(), "LOGIN");
-        adapter.addFragment(new SigninFragment(), "SIGN-IN");
+        adapter.addFragment(new LoginFragment(), getString(R.string.sign_in_tab_layout_text));
+        adapter.addFragment(new SigninFragment(), getString(R.string.sign_up_tab_layout_text));
         viewPager.setAdapter(adapter);
     }
 
