@@ -1,5 +1,6 @@
 package com.katrenich.alex.factoryquestions;
 
+import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
@@ -23,17 +24,17 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void init() {
-        // ініціалізація Toolbar
-//        toolbar = findViewById(R.id.login_activity_toolbar);
-//        setSupportActionBar(toolbar);
 
         // ініціалізація ViewPager - контейнер для відображення фрагментів
         ViewPager viewPager = findViewById(R.id.login_viewpager);
         setupViewPager(viewPager);
 
         // ініціалізація TabLayout та підписання його на отримання даних з ViewPager
-        tabs = findViewById(R.id.tabs);
+        tabs = findViewById(R.id.tl_login_signin);
         tabs.setupWithViewPager(viewPager);
+
+        CollapsingToolbarLayout collapsingToolbarLayout = findViewById(R.id.cpt_authorization);
+        collapsingToolbarLayout.setTitle(getString(R.string.log_collapsing_toolbar_title));
     }
 
     private void setupViewPager(ViewPager viewPager) {
