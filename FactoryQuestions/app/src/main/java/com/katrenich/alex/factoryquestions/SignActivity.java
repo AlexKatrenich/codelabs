@@ -8,8 +8,8 @@ import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 
 import com.katrenich.alex.factoryquestions.adapters.LoginRecyclerAdapter;
-import com.katrenich.alex.factoryquestions.fragments.LoginFragment;
-import com.katrenich.alex.factoryquestions.fragments.SigninFragment;
+import com.katrenich.alex.factoryquestions.fragments.SignInFragment;
+import com.katrenich.alex.factoryquestions.fragments.SignUpFragment;
 
 
 public class SignActivity extends AppCompatActivity {
@@ -39,8 +39,8 @@ public class SignActivity extends AppCompatActivity {
 
     private void setupViewPager(ViewPager viewPager) {
         LoginRecyclerAdapter adapter = new LoginRecyclerAdapter(getSupportFragmentManager());
-        adapter.addFragment(new LoginFragment(), getString(R.string.sign_in_tab_layout_text));
-        adapter.addFragment(new SigninFragment(), getString(R.string.sign_up_tab_layout_text));
+        adapter.addFragment(new SignInFragment(), getString(R.string.sign_in_tab_layout_text));
+        adapter.addFragment(new SignUpFragment(), getString(R.string.sign_up_tab_layout_text));
         viewPager.setAdapter(adapter);
     }
 

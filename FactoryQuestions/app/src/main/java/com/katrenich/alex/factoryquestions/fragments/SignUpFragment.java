@@ -11,10 +11,24 @@ import android.view.ViewGroup;
 import com.katrenich.alex.factoryquestions.*;
 
 
-public class LoginFragment extends Fragment {
+public class SignUpFragment extends Fragment {
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.signin_fragment, null);
+        return inflater.inflate(R.layout.signup_fragment, null);
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+        view.findViewById(R.id.til_email_reg_holder);
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+
     }
 }

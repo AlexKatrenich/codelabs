@@ -19,6 +19,20 @@
 
    </android.support.design.widget.TextInputLayout>
 
+    <!--Текстове поле для запису Email-->
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/til_full_name_reg_holder"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/text_input_margins">
+
+        <android.support.design.widget.TextInputEditText
+            android:id="@+id/tiet_full_name_reg_data"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/sign_up_full_name_item"
+            android:inputType="textPersonName"/>
+    </android.support.design.widget.TextInputLayout>
 
     <!--Текстове поле для запису Email-->
     <android.support.design.widget.TextInputLayout
@@ -31,7 +45,8 @@
             android:id="@+id/tiet_email_reg_data"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/sign_email_input" />
+            android:hint="@string/sign_email_input"
+            android:inputType="textEmailAddress"/>
     </android.support.design.widget.TextInputLayout>
 
     <!--Текстове поле для запису пароля-->
