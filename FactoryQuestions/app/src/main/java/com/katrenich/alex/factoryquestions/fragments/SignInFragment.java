@@ -27,11 +27,10 @@ public class SignInFragment extends Fragment {
     }
 
     @Override
-    public void onStart() {
-        super.onStart();
-
-        etEmail = getActivity().findViewById(R.id.tiet_email_sign_in_data);
-        etPassword = getActivity().findViewById(R.id.tiet_pas_sign_in_data);
-
+    public void onViewCreated(@NonNull View v, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(v, savedInstanceState);
+        etEmail = v.findViewById(R.id.tiet_email_sign_in_data);
+        etPassword = v.findViewById(R.id.tiet_pas_sign_in_data);
     }
+
 }
