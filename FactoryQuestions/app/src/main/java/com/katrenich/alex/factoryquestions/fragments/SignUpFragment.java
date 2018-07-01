@@ -1,5 +1,6 @@
 package com.katrenich.alex.factoryquestions.fragments;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -56,20 +57,14 @@ public class SignUpFragment extends Fragment {
         // ініціалізація випадаючого списка
         spinGroupList = v.findViewById(R.id.group_list_spinner);
 
-        ArrayAdapter<String> spinnerAdapter;
+        // створюється адаптер та заповнюється даними для випадаючого списку
+        ArrayAdapter<String> spinnerAdapter = new ArrayAdapter<>(v.getContext(),
+                android.R.layout.simple_spinner_item, spinnerTestData);
 
-        //перевірка чи Актівіті ще жива, задаємо дані для відображення в Адаптері для випадаючого списку
-        if(this.getActivity() != null){
-            spinnerAdapter = new ArrayAdapter<>(this.getContext(),
-                    android.R.layout.simple_spinner_item, spinnerTestData);
-
-            spinnerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-            spinGroupList.setAdapter(spinnerAdapter);
-            spinGroupList.setSelection(0);
-            Toast.makeText(this.getContext(), "Spinner ok!", Toast.LENGTH_SHORT).show();
-        }
-
-
+        // задається вигляд списку в режимі відкритого вікна
+        spinnerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinGroupList.setAdapter(spinnerAdapter);
+        spinGroupList.setSelection(0); // задаємо позицію списку для відображення по замовчуванню
     }
 
 }
