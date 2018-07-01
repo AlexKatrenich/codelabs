@@ -15,6 +15,10 @@ import com.katrenich.alex.factoryquestions.*;
 
 public class SignUpFragment extends Fragment {
 
+    //Тестові дані, потрібно замінити на дані, що підтягуватимуться з серверної БД
+    String[] spinnerTestData = {"Група 1", "Група 2", "Група 3", "Група 4", "Група 5", "Група 6"};
+
+    // Змінні для ініціалізації полів фрагменту
     private TextInputEditText etFullName, etEmail, etPassword, etPassConfirm;
     private Spinner spinGroupList;
 
@@ -30,8 +34,13 @@ public class SignUpFragment extends Fragment {
         init(view);
     }
 
-    private void init(View v) {
 
+    private void init(View v) {
+        etFullName = v.findViewById(R.id.tiet_full_name_reg_data);
+        etEmail = v.findViewById(R.id.tiet_email_reg_data);
+        etPassword = v.findViewById(R.id.tiet_pas_reg_data);
+        etPassConfirm = v.findViewById(R.id.tiet_pas_reg_confirm_data);
+        
     }
 
 }

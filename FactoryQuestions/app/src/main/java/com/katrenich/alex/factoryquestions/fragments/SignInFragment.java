@@ -14,9 +14,6 @@ import com.katrenich.alex.factoryquestions.*;
 
 public class SignInFragment extends Fragment {
 
-    //Тестові дані, потрібно замінити на дані, що підтягуватимуться з серверної БД
-    String[] spinnerTestData = {"Група 1", "Група 2", "Група 3", "Група 4", "Група 5", "Група 6"};
-
     //змінні для ініціалізації вкладених елементів фрагмента
     private TextInputEditText etEmail, etPassword;
 
@@ -29,8 +26,16 @@ public class SignInFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View v, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(v, savedInstanceState);
+
+        init(v);
+    }
+
+    //ініціаліза
+    private void init(View v) {
+
         etEmail = v.findViewById(R.id.tiet_email_sign_in_data);
         etPassword = v.findViewById(R.id.tiet_pas_sign_in_data);
     }
+
 
 }
