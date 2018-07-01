@@ -8,15 +8,27 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import com.katrenich.alex.factoryquestions.*;
+
+import java.util.Arrays;
+import java.util.List;
 
 
 public class SignUpFragment extends Fragment {
 
     //Тестові дані, потрібно замінити на дані, що підтягуватимуться з серверної БД
-    String[] spinnerTestData = {"Група 1", "Група 2", "Група 3", "Група 4", "Група 5", "Група 6"};
+    List<String> spinnerTestData = Arrays.asList(
+                            "Chose group",
+                            "Group 1",
+                            "Group 2",
+                            "Group 3",
+                            "Group 4",
+                            "Group 5",
+                            "Group 6");
 
     // Змінні для ініціалізації полів фрагменту
     private TextInputEditText etFullName, etEmail, etPassword, etPassConfirm;
@@ -40,7 +52,24 @@ public class SignUpFragment extends Fragment {
         etEmail = v.findViewById(R.id.tiet_email_reg_data);
         etPassword = v.findViewById(R.id.tiet_pas_reg_data);
         etPassConfirm = v.findViewById(R.id.tiet_pas_reg_confirm_data);
-        
+
+        // ініціалізація випадаючого списка
+        spinGroupList = v.findViewById(R.id.group_list_spinner);
+
+        ArrayAdapter<String> spinnerAdapter;
+
+        //перевірка чи Актівіті ще жива, задаємо дані для відображення в Адаптері для випадаючого списку
+        if(this.getActivity() != null){
+            spinnerAdapter = new ArrayAdapter<>(this.getContext(),
+                    android.R.layout.simple_spinner_item, spinnerTestData);
+
+            spinnerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+            spinGroupList.setAdapter(spinnerAdapter);
+            spinGroupList.setSelection(0);
+            Toast.makeText(this.getContext(), "Spinner ok!", Toast.LENGTH_SHORT).show();
+        }
+
+
     }
 
 }
