@@ -9,11 +9,13 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.katrenich.alex.factoryquestions.*;
+import com.katrenich.alex.factoryquestions.adapters.GroupSpinnerAdapter;
 
 import java.util.Arrays;
 import java.util.List;
@@ -58,8 +60,9 @@ public class SignUpFragment extends Fragment {
         spinGroupList = v.findViewById(R.id.group_list_spinner);
 
         // створюється адаптер та заповнюється даними для випадаючого списку
-        ArrayAdapter<String> spinnerAdapter = new ArrayAdapter<>(v.getContext(),
+        GroupSpinnerAdapter<String> spinnerAdapter = new GroupSpinnerAdapter<>(v.getContext(),
                 android.R.layout.simple_spinner_item, spinnerTestData);
+
 
         // задається вигляд списку в режимі відкритого вікна
         spinnerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);

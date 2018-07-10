@@ -30,9 +30,8 @@ public class SignInFragment extends Fragment {
         init(v);
     }
 
-    //ініціаліза
+    //ініціалізація елементів фрагмента
     private void init(View v) {
-
         etEmail = v.findViewById(R.id.tiet_email_sign_in_data);
         etPassword = v.findViewById(R.id.tiet_pas_sign_in_data);
     }
