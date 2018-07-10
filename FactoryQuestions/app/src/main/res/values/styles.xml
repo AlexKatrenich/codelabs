@@ -13,11 +13,13 @@
 
     <style name="ButtonTheme.Base" parent="AppTheme.Base">
         <!--Відступи від елементів до кнопки-->
-        <item name="android:layout_margin">15dp</item>
         <item name="android:background">@color/colorPrimary</item>
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:textSize">18sp</item>
 
     </style>
 
+    
     <style name="AppTheme" parent="AppTheme.Base"></style>
 
 </resources>

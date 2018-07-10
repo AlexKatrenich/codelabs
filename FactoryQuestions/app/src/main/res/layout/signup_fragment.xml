@@ -101,18 +101,20 @@
             android:id="@+id/tiet_pas_reg_confirm_data"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:fontFamily="sans-serif"
             android:hint="@string/sign_password_confirm"
-            android:inputType="textPassword"/>
+            android:inputType="textPassword"
+            android:textAppearance="@android:style/TextAppearance.Medium.Inverse" />
 
     </android.support.design.widget.TextInputLayout>
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btn_reg"
         style="@style/ButtonTheme.Base"
+        android:layout_margin="15dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:fontFamily="sans-serif"
-        android:text="Button"
+        android:text="@string/registration_button_text"
         android:textAppearance="@android:style/TextAppearance.Medium.Inverse" />
 
 </LinearLayout>

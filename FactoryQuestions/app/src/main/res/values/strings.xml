@@ -7,6 +7,6 @@
     <string name="sign_in_tab_layout_text">SIGN IN</string>
     <string name="sign_up_tab_layout_text">SIGN UP</string>
     <string name="sign_up_full_name_item">Enter full name</string>
-    
-
+    <string name="registration_button_text">Registration</string>
+    <string name="sign_in_button_text">Sign in</string>
 </resources>
