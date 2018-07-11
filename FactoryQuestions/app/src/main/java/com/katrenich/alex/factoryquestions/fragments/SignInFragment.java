@@ -8,14 +8,16 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 import com.katrenich.alex.factoryquestions.*;
 
 
-public class SignInFragment extends Fragment {
+public class SignInFragment extends Fragment implements View.OnClickListener{
 
     //змінні для ініціалізації вкладених елементів фрагмента
     private TextInputEditText etEmail, etPassword;
+    private Button signButton;
 
     @Nullable
     @Override
@@ -26,7 +28,6 @@ public class SignInFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View v, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(v, savedInstanceState);
-
         init(v);
     }
 
@@ -34,7 +35,15 @@ public class SignInFragment extends Fragment {
     private void init(View v) {
         etEmail = v.findViewById(R.id.tiet_email_sign_in_data);
         etPassword = v.findViewById(R.id.tiet_pas_sign_in_data);
+        signButton = v.findViewById(R.id.btn_sign_in);
+        signButton.setOnClickListener(this);
     }
 
 
+    @Override
+    public void onClick(View v) {
+        if(v.getId() == R.id.btn_sign_in){
+            //TODO
+        }
+    }
 }

@@ -6,6 +6,7 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.view.View;
 
 import com.katrenich.alex.factoryquestions.adapters.LoginRecyclerAdapter;
 import com.katrenich.alex.factoryquestions.fragments.SignInFragment;
