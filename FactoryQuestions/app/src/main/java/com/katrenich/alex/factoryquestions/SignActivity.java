@@ -14,7 +14,6 @@ import com.katrenich.alex.factoryquestions.fragments.SignUpFragment;
 
 
 public class SignActivity extends AppCompatActivity {
-    private Toolbar toolbar;
     private TabLayout tabs;
 
     @Override

@@ -61,7 +61,10 @@ public class SignUpFragment extends Fragment {
 
         // створюється адаптер та заповнюється даними для випадаючого списку
         GroupSpinnerAdapter<String> spinnerAdapter = new GroupSpinnerAdapter<>(v.getContext(),
-                android.R.layout.simple_spinner_item, spinnerTestData);
+                R.layout.test_spinner_item, spinnerTestData);
+
+//        ArrayAdapter<String> spinnerAdapter = new ArrayAdapter<>(v.getContext(),
+//                android.R.layout.simple_spinner_item, spinnerTestData);
 
 
         // задається вигляд списку в режимі відкритого вікна

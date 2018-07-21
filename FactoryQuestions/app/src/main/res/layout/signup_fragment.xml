@@ -27,7 +27,8 @@
             android:layout_marginLeft="5dp"
             android:background="@android:color/transparent"
             android:gravity="center"
-            android:spinnerMode="dropdown" />
+            android:spinnerMode="dropdown"
+            />
 
 
         <ImageView
