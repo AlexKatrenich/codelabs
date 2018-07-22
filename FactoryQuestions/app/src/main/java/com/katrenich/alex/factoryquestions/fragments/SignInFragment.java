@@ -9,11 +9,19 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.katrenich.alex.factoryquestions.*;
 
+import java.util.regex.Pattern;
+
 
 public class SignInFragment extends Fragment implements View.OnClickListener{
+
+    //константа для валідації емейла
+    private static final String EMAIL_PATTERN =
+            "^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@" +
+                    "[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$";
 
     //змінні для ініціалізації вкладених елементів фрагмента
     private TextInputEditText etEmail, etPassword;
@@ -43,7 +51,20 @@ public class SignInFragment extends Fragment implements View.OnClickListener{
     @Override
     public void onClick(View v) {
         if(v.getId() == R.id.btn_sign_in){
-            //TODO
+            String userEmail = etEmail.getText().toString();
+            String userPassword = etPassword.getText().toString();
+
+            if(validateEmail(userEmail)){
+                //TODO
+            } else {
+                etEmail.setError(null);
+                Toast.makeText(v.getContext(), "Not valid email", Toast.LENGTH_LONG).show();
+            }
         }
+    }
+
+    // метод перевірки Емейл на валідність
+    private boolean validateEmail(String userEmail) {
+        return Pattern.compile(EMAIL_PATTERN).matcher(userEmail).matches();
     }
 }
