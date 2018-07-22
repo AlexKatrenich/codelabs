@@ -5,6 +5,7 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.design.widget.TextInputEditText;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,6 +18,8 @@ import java.util.regex.Pattern;
 
 
 public class SignInFragment extends Fragment implements View.OnClickListener{
+
+    private final String TAG = "SignInFragment";
 
     //константа для валідації емейла
     private static final String EMAIL_PATTERN =
@@ -45,6 +48,7 @@ public class SignInFragment extends Fragment implements View.OnClickListener{
         etPassword = v.findViewById(R.id.tiet_pas_sign_in_data);
         signButton = v.findViewById(R.id.btn_sign_in);
         signButton.setOnClickListener(this);
+        Log.d(TAG, "init: initialize all view elements");
     }
 
 
@@ -52,10 +56,14 @@ public class SignInFragment extends Fragment implements View.OnClickListener{
     public void onClick(View v) {
         if(v.getId() == R.id.btn_sign_in){
             String userEmail = etEmail.getText().toString();
+            Log.d(TAG, "onClick: get user email to Variable");
             String userPassword = etPassword.getText().toString();
+            Log.d(TAG, "onClick: get user password to Variable");
 
             if (validateEmail(userEmail) && checkUserAuth(userEmail, userPassword)){
                 //TODO
+
+                Toast.makeText(v.getContext(), "View WORKS!", Toast.LENGTH_SHORT).show();
             } else {
                 Toast.makeText(v.getContext(), "Login or password was incorrect", Toast.LENGTH_LONG).show();
             }
@@ -71,6 +79,8 @@ public class SignInFragment extends Fragment implements View.OnClickListener{
 
     // метод перевірки Емейл на валідність
     private boolean validateEmail(String userEmail) {
-        return Pattern.compile(EMAIL_PATTERN).matcher(userEmail).matches();
+        boolean b = Pattern.compile(EMAIL_PATTERN).matcher(userEmail).matches();
+        Log.d(TAG, "validateEmail: " + b);
+        return b;
     }
 }
