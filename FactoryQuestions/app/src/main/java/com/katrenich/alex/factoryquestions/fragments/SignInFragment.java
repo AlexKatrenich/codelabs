@@ -1,5 +1,6 @@
 package com.katrenich.alex.factoryquestions.fragments;
 
+import android.app.Activity;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -55,6 +56,14 @@ public class SignInFragment extends Fragment implements View.OnClickListener{
     @Override
     public void onClick(View v) {
         if(v.getId() == R.id.btn_sign_in){
+
+            BaseActivity activity = (BaseActivity) getActivity();
+            if(activity != null){
+                activity.showProgressDialog();
+                Log.d(TAG, "onClick: baseActivity.showProgressDialog()");
+                activity.hideKeyboard(v);
+            }
+
             String userEmail = etEmail.getText().toString();
             Log.d(TAG, "onClick: get user email to Variable");
             String userPassword = etPassword.getText().toString();
@@ -68,12 +77,15 @@ public class SignInFragment extends Fragment implements View.OnClickListener{
                 Toast.makeText(v.getContext(), "Login or password was incorrect", Toast.LENGTH_LONG).show();
             }
 
+
+            activity.hideProgressDialog();
         }
     }
 
     // метод для перевірки логіна та пароля по базі даних для авторизації користувача
     private boolean checkUserAuth(String userEmail, String userPassword) {
         // Тут потрібно зробити перевірку співпадіння логіну та паролю по базі даних
+
         return true;
     }
 

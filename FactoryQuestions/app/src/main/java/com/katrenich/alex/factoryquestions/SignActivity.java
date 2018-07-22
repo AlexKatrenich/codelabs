@@ -11,7 +11,7 @@ import com.katrenich.alex.factoryquestions.fragments.SignInFragment;
 import com.katrenich.alex.factoryquestions.fragments.SignUpFragment;
 
 
-public class SignActivity extends LogActivity {
+public class SignActivity extends BaseActivity {
     private TabLayout tabs;
 
     @Override
