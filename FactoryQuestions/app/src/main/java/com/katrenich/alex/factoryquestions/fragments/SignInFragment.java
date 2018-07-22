@@ -54,13 +54,19 @@ public class SignInFragment extends Fragment implements View.OnClickListener{
             String userEmail = etEmail.getText().toString();
             String userPassword = etPassword.getText().toString();
 
-            if(validateEmail(userEmail)){
+            if (validateEmail(userEmail) && checkUserAuth(userEmail, userPassword)){
                 //TODO
             } else {
-                etEmail.setError(null);
-                Toast.makeText(v.getContext(), "Not valid email", Toast.LENGTH_LONG).show();
+                Toast.makeText(v.getContext(), "Login or password was incorrect", Toast.LENGTH_LONG).show();
             }
+
         }
+    }
+
+    // метод для перевірки логіна та пароля по базі даних для авторизації користувача
+    private boolean checkUserAuth(String userEmail, String userPassword) {
+        // Тут потрібно зробити перевірку співпадіння логіну та паролю по базі даних
+        return true;
     }
 
     // метод перевірки Емейл на валідність
