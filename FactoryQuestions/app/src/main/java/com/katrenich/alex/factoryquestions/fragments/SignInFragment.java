@@ -59,6 +59,7 @@ public class SignInFragment extends Fragment implements View.OnClickListener{
 
             BaseActivity activity = (BaseActivity) getActivity();
             if(activity != null){
+                // відкриваю елемент відображення прогрессу та ховаю клавіатуру
                 activity.showProgressDialog();
                 Log.d(TAG, "onClick: baseActivity.showProgressDialog()");
                 activity.hideKeyboard(v);
@@ -77,8 +78,11 @@ public class SignInFragment extends Fragment implements View.OnClickListener{
                 Toast.makeText(v.getContext(), "Login or password was incorrect", Toast.LENGTH_LONG).show();
             }
 
+            // закриваю елемент відображення прогрессу
+            if (activity != null){
+                activity.hideProgressDialog();
+            }
 
-            activity.hideProgressDialog();
         }
     }
 

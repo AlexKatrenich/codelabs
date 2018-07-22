@@ -6,11 +6,13 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.design.widget.TextInputEditText;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -19,9 +21,21 @@ import com.katrenich.alex.factoryquestions.adapters.GroupSpinnerAdapter;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.regex.Pattern;
 
 
-public class SignUpFragment extends Fragment {
+public class SignUpFragment extends Fragment implements View.OnClickListener{
+
+    private final String TAG = "SignUpFragment";
+
+    //константа для валідації емейла
+    private static final String EMAIL_PATTERN =
+            "^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@" +
+                    "[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$";
+
+    // константа для валідації пароля
+
+    private static final String PASSWORD_PATTERN = "^[a-zA-Z0-9]+$";
 
     //Тестові дані, потрібно замінити на дані, що підтягуватимуться з серверної БД
     List<String> spinnerTestData = Arrays.asList(
@@ -36,6 +50,7 @@ public class SignUpFragment extends Fragment {
     // Змінні для ініціалізації полів фрагменту
     private TextInputEditText etFullName, etEmail, etPassword, etPassConfirm;
     private Spinner spinGroupList;
+    private Button btnRegistration;
 
     @Nullable
     @Override
@@ -55,6 +70,8 @@ public class SignUpFragment extends Fragment {
         etEmail = v.findViewById(R.id.tiet_email_reg_data);
         etPassword = v.findViewById(R.id.tiet_pas_reg_data);
         etPassConfirm = v.findViewById(R.id.tiet_pas_reg_confirm_data);
+        btnRegistration = v.findViewById(R.id.btn_reg);
+        Log.d(TAG, "init: etFullName, etEmail, etPassword, etPassConfirm, btnRegistration");
 
         // ініціалізація випадаючого списка
         spinGroupList = v.findViewById(R.id.group_list_spinner);
@@ -63,9 +80,6 @@ public class SignUpFragment extends Fragment {
         GroupSpinnerAdapter<String> spinnerAdapter = new GroupSpinnerAdapter<>(v.getContext(),
                 R.layout.test_spinner_item, spinnerTestData);
 
-//        ArrayAdapter<String> spinnerAdapter = new ArrayAdapter<>(v.getContext(),
-//                android.R.layout.simple_spinner_item, spinnerTestData);
-
 
         // задається вигляд списку в режимі відкритого вікна
         spinnerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -73,4 +87,34 @@ public class SignUpFragment extends Fragment {
         spinGroupList.setSelection(0); // задаємо позицію списку для відображення по замовчуванню
     }
 
+
+    @Override
+    public void onClick(View v) {
+        if(v.getId() == R.id.btn_reg){
+            String userEmail = etEmail.getText().toString();
+            String userPassword = etPassword.getText().toString();
+            String userFullName = etFullName.getText().toString();
+            int groupNumber = spinGroupList.getSelectedItemPosition();
+            validateFields(userEmail, userPassword, userFullName, groupNumber);
+        }
+    }
+
+    private boolean validateFields(String userEmail, String userPassword, String userFullName, int groupNumber) {
+        boolean valid = true;
+
+        // перевіряємо емейл на валідність
+        if (!Pattern.compile(EMAIL_PATTERN).matcher(userEmail).matches()){
+            valid = false;
+            etEmail.setError(null);
+        }
+
+        // перевіряємо пароль на валідність
+        if (!Pattern.compile(PASSWORD_PATTERN).matcher(userPassword).matches() && !userPassword.equals(etPassConfirm.getText().toString())){
+
+        }
+
+
+
+        return valid;
+    }
 }
