@@ -35,7 +35,7 @@ public class SignUpFragment extends Fragment implements View.OnClickListener{
 
     // константа для валідації пароля
 
-    private static final String PASSWORD_PATTERN = "^[a-zA-Z0-9]+$";
+    private static final String PASSWORD_PATTERN = "^[a-zA-Z0-9-_\\.]{1,20}$";
 
     //Тестові дані, потрібно замінити на дані, що підтягуватимуться з серверної БД
     List<String> spinnerTestData = Arrays.asList(
@@ -75,6 +75,7 @@ public class SignUpFragment extends Fragment implements View.OnClickListener{
 
         // ініціалізація випадаючого списка
         spinGroupList = v.findViewById(R.id.group_list_spinner);
+        Log.d(TAG, "init: v.findViewById(R.id.group_list_spinner)");
 
         // створюється адаптер та заповнюється даними для випадаючого списку
         GroupSpinnerAdapter<String> spinnerAdapter = new GroupSpinnerAdapter<>(v.getContext(),
@@ -106,11 +107,18 @@ public class SignUpFragment extends Fragment implements View.OnClickListener{
         if (!Pattern.compile(EMAIL_PATTERN).matcher(userEmail).matches()){
             valid = false;
             etEmail.setError(null);
+
         }
 
         // перевіряємо пароль на валідність
-        if (!Pattern.compile(PASSWORD_PATTERN).matcher(userPassword).matches() && !userPassword.equals(etPassConfirm.getText().toString())){
+        if (!Pattern.compile(PASSWORD_PATTERN).matcher(userPassword).matches()){
+            valid = false;
+            etPassword.setError(null);
+        }
 
+        if (!userPassword.equals(etPassConfirm.getText().toString())){
+            valid = false;
+            etPassConfirm.setError(null);
         }
 
 
