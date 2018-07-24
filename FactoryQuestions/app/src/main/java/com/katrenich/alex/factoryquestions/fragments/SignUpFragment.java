@@ -1,5 +1,6 @@
 package com.katrenich.alex.factoryquestions.fragments;
 
+import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -107,20 +108,33 @@ public class SignUpFragment extends Fragment implements View.OnClickListener{
         if (!Pattern.compile(EMAIL_PATTERN).matcher(userEmail).matches()){
             valid = false;
             etEmail.setError(null);
-
+            Log.d(TAG, "validateFields: Email is not valid");
         }
 
         // перевіряємо пароль на валідність
         if (!Pattern.compile(PASSWORD_PATTERN).matcher(userPassword).matches()){
             valid = false;
             etPassword.setError(null);
+            Log.d(TAG, "validateFields: Password is not valid");
         }
 
+        // перевіряємо пароль та підтвердження на збіг
         if (!userPassword.equals(etPassConfirm.getText().toString())){
             valid = false;
             etPassConfirm.setError(null);
+            Log.d(TAG, "validateFields: Password not equals password confirm");
         }
 
+        // перевіряємо чи обрана група
+        if (groupNumber == 0){
+            valid = false;
+            Activity activity = this.getActivity();
+            if(activity != null){
+                Toast.makeText(activity, "Choose your group", Toast.LENGTH_LONG).show();
+            }
+
+            Log.d(TAG, "validateFields: Group not was chosen");
+        }
 
 
         return valid;
