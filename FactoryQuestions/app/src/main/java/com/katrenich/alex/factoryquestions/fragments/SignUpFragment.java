@@ -84,6 +84,7 @@ public class SignUpFragment extends Fragment implements View.OnClickListener{
                 R.layout.test_spinner_item, spinnerTestData);
 
 
+
         // задається вигляд списку в режимі відкритого вікна
         spinnerAdapter.setDropDownViewResource(R.layout.group_spinner_dropdown_item);
         spinGroupList.setAdapter(spinnerAdapter);
@@ -101,7 +102,7 @@ public class SignUpFragment extends Fragment implements View.OnClickListener{
 
             Log.d(TAG, "User email :" + userEmail + "\nUser password : " + userPassword
                     + "\nUser password confirm : " + etPassConfirm.getText().toString()
-                    + "\nGroup : " + spinGroupList.getPrompt().toString());
+                    + "\nGroup : " + spinnerTestData.get((int) spinGroupList.getSelectedItemId()));
 
             boolean valFields = validateFields(userEmail, userPassword, userFullName, groupNumber);
 
@@ -112,7 +113,7 @@ public class SignUpFragment extends Fragment implements View.OnClickListener{
             if(activity != null){
                 Toast.makeText(activity, "User email :" + userEmail + "\nUser password : " + userPassword
                         + "\nUser password confirm : " + etPassConfirm.getText().toString()
-                        + "\nGroup : " + spinGroupList.getPrompt().toString(), Toast.LENGTH_SHORT).show();
+                        + "\nGroup : " + spinnerTestData.get((int) spinGroupList.getSelectedItemId()), Toast.LENGTH_SHORT).show();
             }
         }
     }
@@ -138,7 +139,7 @@ public class SignUpFragment extends Fragment implements View.OnClickListener{
         // перевіряємо пароль та підтвердження на збіг
         if (!userPassword.equals(etPassConfirm.getText().toString())){
             valid = false;
-            etPassConfirm.setError(null);
+            etPassConfirm.setError(etPassConfirm.getText().toString());
             Log.d(TAG, "validateFields: Password not equals password confirm");
         }
 
