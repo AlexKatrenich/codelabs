@@ -1,7 +1,6 @@
 package com.katrenich.alex.factoryquestions.fragments;
 
 import android.app.Activity;
-import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -11,10 +10,9 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.katrenich.alex.factoryquestions.*;
@@ -35,8 +33,11 @@ public class SignUpFragment extends Fragment implements View.OnClickListener{
                     "[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$";
 
     // константа для валідації пароля
+    private static final String PASSWORD_PATTERN = "^[a-zA-Z0-9-_\\.]{2,20}$";
 
-    private static final String PASSWORD_PATTERN = "^[a-zA-Z0-9-_\\.]{1,20}$";
+    //константа для валідації Логіну користувача
+    private static final String USER_FULLNAME_PATTERN = "^[а-яА-ЯёЁa-zA-Z\\.]{2,20}$";
+
 
     //Тестові дані, потрібно замінити на дані, що підтягуватимуться з серверної БД
     List<String> spinnerTestData = Arrays.asList(
@@ -81,7 +82,7 @@ public class SignUpFragment extends Fragment implements View.OnClickListener{
 
         // створюється адаптер та заповнюється даними для випадаючого списку
         GroupSpinnerAdapter<String> spinnerAdapter = new GroupSpinnerAdapter<>(v.getContext(),
-                R.layout.test_spinner_item, spinnerTestData);
+                R.layout.spinner_item, spinnerTestData);
 
 
 
@@ -108,13 +109,16 @@ public class SignUpFragment extends Fragment implements View.OnClickListener{
 
             Log.d(TAG, "onClick: validateFields = " + valFields);
 
+            // Для тестування, після налаштування обмінів з сервером - видалити
             Activity activity = this.getActivity();
-
-            if(activity != null){
+            if(activity != null && valFields){
                 Toast.makeText(activity, "User email :" + userEmail + "\nUser password : " + userPassword
                         + "\nUser password confirm : " + etPassConfirm.getText().toString()
                         + "\nGroup : " + spinnerTestData.get((int) spinGroupList.getSelectedItemId()), Toast.LENGTH_SHORT).show();
             }
+
+
+
         }
     }
 
@@ -122,33 +126,44 @@ public class SignUpFragment extends Fragment implements View.OnClickListener{
     private boolean validateFields(String userEmail, String userPassword, String userFullName, int groupNumber) {
         boolean valid = true;
 
+        // перевіряємо Full Name користувача на валідність
+        if (!Pattern.compile(USER_FULLNAME_PATTERN).matcher(userFullName).matches()){
+            valid = false;
+            etFullName.setError("Incorrect full name");
+            Log.d(TAG, "validateFields: User Full name is not valid");
+        }
+
         // перевіряємо емейл на валідність
         if (!Pattern.compile(EMAIL_PATTERN).matcher(userEmail).matches()){
             valid = false;
-            etEmail.setError(null);
+            etEmail.setError("Incorrect email");
             Log.d(TAG, "validateFields: Email is not valid");
         }
 
         // перевіряємо пароль на валідність
         if (!Pattern.compile(PASSWORD_PATTERN).matcher(userPassword).matches()){
             valid = false;
-            etPassword.setError(null);
+            etPassword.setError("Password must contain at least 2 letters or numbers");
             Log.d(TAG, "validateFields: Password is not valid");
         }
 
         // перевіряємо пароль та підтвердження на збіг
         if (!userPassword.equals(etPassConfirm.getText().toString())){
             valid = false;
-            etPassConfirm.setError(etPassConfirm.getText().toString());
+            etPassConfirm.setError("Password and confirm password must be same");
             Log.d(TAG, "validateFields: Password not equals password confirm");
         }
 
         // перевіряємо чи обрана група
         if (groupNumber == 0){
             valid = false;
+
+            //TODO в прописати видачу помилки в ТексВ'ю Спінера.
+
             Activity activity = this.getActivity();
             if(activity != null){
-                Toast.makeText(activity, "Choose your group", Toast.LENGTH_LONG).show();
+
+                Toast.makeText(activity, "Please choose your group", Toast.LENGTH_LONG).show();
             }
 
             Log.d(TAG, "validateFields: Group not was chosen");

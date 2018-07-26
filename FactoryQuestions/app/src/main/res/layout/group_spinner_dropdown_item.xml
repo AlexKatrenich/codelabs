@@ -19,7 +19,7 @@
 -->
 <CheckedTextView
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@android:id/text1"
+    android:id="@android:id/tv_spinner_item"
     style="@style/ButtonTheme.Base"
     android:singleLine="true"
     android:layout_width="match_parent"
