@@ -72,7 +72,6 @@ public class SignInFragment extends Fragment implements View.OnClickListener{
 
             if (validateEmail(userEmail) && checkUserAuth(userEmail, userPassword)){
                 //TODO
-
                 Toast.makeText(v.getContext(), "View WORKS!", Toast.LENGTH_SHORT).show();
             } else {
                 Toast.makeText(v.getContext(), "Login or password was incorrect", Toast.LENGTH_LONG).show();

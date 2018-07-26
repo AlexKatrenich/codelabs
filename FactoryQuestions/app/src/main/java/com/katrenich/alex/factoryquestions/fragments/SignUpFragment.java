@@ -72,6 +72,7 @@ public class SignUpFragment extends Fragment implements View.OnClickListener{
         etPassword = v.findViewById(R.id.tiet_pas_reg_data);
         etPassConfirm = v.findViewById(R.id.tiet_pas_reg_confirm_data);
         btnRegistration = v.findViewById(R.id.btn_reg);
+        btnRegistration.setOnClickListener(this);
         Log.d(TAG, "init: etFullName, etEmail, etPassword, etPassConfirm, btnRegistration");
 
         // ініціалізація випадаючого списка
@@ -97,7 +98,14 @@ public class SignUpFragment extends Fragment implements View.OnClickListener{
             String userPassword = etPassword.getText().toString();
             String userFullName = etFullName.getText().toString();
             int groupNumber = spinGroupList.getSelectedItemPosition();
-            validateFields(userEmail, userPassword, userFullName, groupNumber);
+
+            Log.d(TAG, "User email :" + userEmail + "\nUser password : " + userPassword
+                    + "\nUser password confirm : " + etPassConfirm.getText().toString()
+                    + "\nGroup : " + spinGroupList.getPrompt().toString());
+
+            boolean valFields = validateFields(userEmail, userPassword, userFullName, groupNumber);
+
+            Log.d(TAG, "onClick: validateFields = " + valFields);
 
             Activity activity = this.getActivity();
 
