@@ -98,9 +98,18 @@ public class SignUpFragment extends Fragment implements View.OnClickListener{
             String userFullName = etFullName.getText().toString();
             int groupNumber = spinGroupList.getSelectedItemPosition();
             validateFields(userEmail, userPassword, userFullName, groupNumber);
+
+            Activity activity = this.getActivity();
+
+            if(activity != null){
+                Toast.makeText(activity, "User email :" + userEmail + "\nUser password : " + userPassword
+                        + "\nUser password confirm : " + etPassConfirm.getText().toString()
+                        + "\nGroup : " + spinGroupList.getPrompt().toString(), Toast.LENGTH_SHORT).show();
+            }
         }
     }
 
+    // метод для валідації даних внесених користувачем
     private boolean validateFields(String userEmail, String userPassword, String userFullName, int groupNumber) {
         boolean valid = true;
 
