@@ -87,6 +87,7 @@ public class SignUpFragment extends Fragment implements View.OnClickListener{
 
 
         // задається вигляд списку в режимі відкритого вікна
+//        spinnerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnerAdapter.setDropDownViewResource(R.layout.group_spinner_dropdown_item);
         spinGroupList.setAdapter(spinnerAdapter);
         spinGroupList.setSelection(0); // задаємо позицію списку для відображення по замовчуванню

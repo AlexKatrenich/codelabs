@@ -8,4 +8,5 @@ public class Group {
     private List<User> users;
 //    private List<Questionary> questionaries;
 
+
 }
