@@ -1,6 +1,5 @@
 package com.katrenich.alex.factoryquestions.fragments;
 
-import android.app.Activity;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -91,6 +90,7 @@ public class SignInFragment extends Fragment implements View.OnClickListener{
 
         return true;
     }
+
 
     // метод перевірки Емейл на валідність
     private boolean validateEmail(String userEmail) {
