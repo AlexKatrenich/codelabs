@@ -2,10 +2,12 @@ package com.katrenich.alex.factoryquestions;
 
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 
 public class QuestionariesActivity extends BaseActivity implements View.OnClickListener{
-
+    private final String TAG = "QuestionariesActivity_";
     private Toolbar mToolbar;
 
 
@@ -32,11 +34,17 @@ public class QuestionariesActivity extends BaseActivity implements View.OnClickL
     }
 
     @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        return super.onOptionsItemSelected(item);
+    }
+
+    @Override
     public void onClick(View v) {
         switch (v.getId()){
             // обработка клика на кнопку бек(на тулбаре)
-            case android.R.id.home :
+            case android.R.id.home : /*НЕВІРНО ВКАЗАНО ІД КНОПКИ ТУЛБАРУ, код нижче - не працює*/
                 onBackPressed();
+                Log.d(TAG, "onClick: onBackPressed()");
                 break;
 
             default:

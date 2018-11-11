@@ -1,5 +1,6 @@
 package com.katrenich.alex.factoryquestions.fragments;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -19,7 +20,7 @@ import java.util.regex.Pattern;
 
 public class SignInFragment extends Fragment implements View.OnClickListener{
 
-    private final String TAG = "SignInFragment";
+    private final String TAG = "SignInFragment_";
 
     //константа для валідації емейла
     private static final String EMAIL_PATTERN =
@@ -70,8 +71,12 @@ public class SignInFragment extends Fragment implements View.OnClickListener{
             Log.d(TAG, "onClick: get user password to Variable");
 
             if (validateEmail(userEmail) && checkUserAuth(userEmail, userPassword)){
-                //TODO
-                Toast.makeText(v.getContext(), "View WORKS!", Toast.LENGTH_SHORT).show();
+                // Тут робимо перехід на екран зі списком опитувальників
+                Intent intent = new Intent(v.getContext(), QuestionariesActivity.class);
+                Log.d(TAG, "onClick: new Intent(v.getContext(), QuestionariesActivity.class)");
+                startActivity(intent);
+                // Знищуємо поточний фрагмент, щоб до нього не повертатись
+                //onDestroy();
             } else {
                 Toast.makeText(v.getContext(), "Login or password was incorrect", Toast.LENGTH_LONG).show();
             }
@@ -83,6 +88,7 @@ public class SignInFragment extends Fragment implements View.OnClickListener{
 
         }
     }
+
 
     // метод для перевірки логіна та пароля по базі даних для авторизації користувача
     private boolean checkUserAuth(String userEmail, String userPassword) {
@@ -98,4 +104,5 @@ public class SignInFragment extends Fragment implements View.OnClickListener{
         Log.d(TAG, "validateEmail: " + b);
         return b;
     }
+
 }
