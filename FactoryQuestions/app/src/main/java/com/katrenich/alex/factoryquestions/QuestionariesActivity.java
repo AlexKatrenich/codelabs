@@ -5,6 +5,7 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Toast;
 
 public class QuestionariesActivity extends BaseActivity implements View.OnClickListener{
     private final String TAG = "QuestionariesActivity_";
@@ -29,7 +30,12 @@ public class QuestionariesActivity extends BaseActivity implements View.OnClickL
         getSupportActionBar().setDisplayShowHomeEnabled(false);
         getSupportActionBar().setDisplayShowTitleEnabled(true);
         getSupportActionBar().setTitle("Choose questionary");
-        mToolbar.setNavigationOnClickListener(this);
+        mToolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v){
+                onBackPressed();
+            }
+        });
 
     }
 
@@ -39,17 +45,15 @@ public class QuestionariesActivity extends BaseActivity implements View.OnClickL
     }
 
     @Override
-    public void onClick(View v) {
-        switch (v.getId()){
-            // обработка клика на кнопку бек(на тулбаре)
-            case android.R.id.home : /*НЕВІРНО ВКАЗАНО ІД КНОПКИ ТУЛБАРУ, код нижче - не працює*/
-                onBackPressed();
-                Log.d(TAG, "onClick: onBackPressed()");
-                break;
+    public boolean onNavigateUp(){
+        Toast.makeText(this, "click back", Toast.LENGTH_SHORT).show();
+        finish();
+        return true;
+    }
 
-            default:
-                break;
-        }
+    @Override
+    public void onClick(View v) {
+
     }
 
 
