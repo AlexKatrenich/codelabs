@@ -6,6 +6,7 @@
         <item name="colorPrimaryDark">#1b1b1b</item>
         <item name="colorAccent">#6d6d6d</item>
         <item name="android:textColor">#ffff</item>
+        <item name="cardViewStyle">@style/CardView</item>
     </style>
 
     <style name="ButtonTheme.Base" parent="AppTheme.Base">
