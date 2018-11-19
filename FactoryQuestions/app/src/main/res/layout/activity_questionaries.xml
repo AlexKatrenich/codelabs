@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".QuestionariesActivity"
-    android:theme="@style/AppTheme.Base">
+    android:theme="@style/AppTheme.Base"
+    tools:context=".QuestionariesActivity">
 
     <android.support.design.widget.AppBarLayout
         android:id="@+id/appbar"
@@ -19,45 +19,52 @@
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:background="?attr/colorPrimary"
-            app:titleTextColor="@android:color/white"
             app:layout_scrollFlags="scroll|enterAlways"
-            app:popupTheme="@style/ButtonTheme.Base">
-        </android.support.v7.widget.Toolbar>
+            app:popupTheme="@style/ButtonTheme.Base"
+            app:titleTextColor="@android:color/white"></android.support.v7.widget.Toolbar>
     </android.support.design.widget.AppBarLayout>
 
+    <ListView
+        android:id="@+id/lv_questionaries"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/appbar"
+        app:layout_constraintVertical_bias="0.0" />
 
 
+    <!--<android.support.v7.widget.CardView-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_margin="8dp"-->
+    <!--app:cardCornerRadius="8dp"-->
+    <!--app:cardBackgroundColor="@color/colorPrimary">-->
 
-    <android.support.v7.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_margin="8dp"
-        app:cardCornerRadius="8dp"
-        app:cardBackgroundColor="@color/colorPrimary">
+    <!--<LinearLayout-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:orientation="horizontal">-->
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal">
+    <!--<TextView-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--tools:text="1"-->
+    <!--android:textSize="18dp"-->
+    <!--android:layout_margin="13dp"/>-->
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="1"
-                android:textSize="18dp"
-                android:layout_margin="13dp"/>
+    <!--<TextView-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--tools:text="Group 1"-->
+    <!--android:textSize="18dp"-->
+    <!--android:layout_margin="13dp"/>-->
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Group 1"
-                android:textSize="18dp"
-                android:layout_margin="13dp"/>
+    <!--</LinearLayout>-->
 
-        </LinearLayout>
-
-    </android.support.v7.widget.CardView>
-
+    <!--</android.support.v7.widget.CardView>-->
 
 
-</LinearLayout>
+</android.support.constraint.ConstraintLayout>
