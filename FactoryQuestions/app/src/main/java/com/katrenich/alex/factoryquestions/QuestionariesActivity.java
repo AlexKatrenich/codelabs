@@ -6,8 +6,6 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Adapter;
-import android.widget.ArrayAdapter;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
@@ -15,7 +13,6 @@ import android.widget.Toast;
 import com.katrenich.alex.factoryquestions.adapters.QuestionariesListAdapter;
 import com.katrenich.alex.factoryquestions.testMethodsMock.QuestionariesActivityMock;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class QuestionariesActivity extends BaseActivity implements View.OnClickListener{
