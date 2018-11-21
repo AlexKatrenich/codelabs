@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:theme="@style/AppTheme.Base"
-    tools:context=".QuestionariesActivity">
+    tools:context=".activities.QuestionariesActivity">
 
     <android.support.design.widget.AppBarLayout
         android:id="@+id/appbar"

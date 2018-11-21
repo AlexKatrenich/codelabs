@@ -1,4 +1,4 @@
-package com.katrenich.alex.factoryquestions;
+package com.katrenich.alex.factoryquestions.activities;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;

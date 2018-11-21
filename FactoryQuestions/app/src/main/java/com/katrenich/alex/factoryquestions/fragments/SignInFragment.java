@@ -14,6 +14,8 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import com.katrenich.alex.factoryquestions.*;
+import com.katrenich.alex.factoryquestions.activities.BaseActivity;
+import com.katrenich.alex.factoryquestions.activities.QuestionariesActivity;
 
 import java.util.regex.Pattern;
 

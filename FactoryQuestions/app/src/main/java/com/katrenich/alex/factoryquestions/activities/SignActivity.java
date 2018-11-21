@@ -1,4 +1,4 @@
-package com.katrenich.alex.factoryquestions;
+package com.katrenich.alex.factoryquestions.activities;
 
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.design.widget.TabLayout;
@@ -6,6 +6,7 @@ import android.support.v4.view.ViewPager;
 import android.os.Bundle;
 import android.util.Log;
 
+import com.katrenich.alex.factoryquestions.R;
 import com.katrenich.alex.factoryquestions.adapters.LoginRecyclerAdapter;
 import com.katrenich.alex.factoryquestions.fragments.SignInFragment;
 import com.katrenich.alex.factoryquestions.fragments.SignUpFragment;

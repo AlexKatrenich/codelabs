@@ -1,4 +1,4 @@
-package com.katrenich.alex.factoryquestions;
+package com.katrenich.alex.factoryquestions.activities;
 
 import android.app.ProgressDialog;
 import android.content.Context;
@@ -6,6 +6,8 @@ import android.support.annotation.VisibleForTesting;
 import android.util.Log;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
+
+import com.katrenich.alex.factoryquestions.R;
 
 public class BaseActivity extends LogActivity {
     @VisibleForTesting

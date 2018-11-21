@@ -1,4 +1,4 @@
-package com.katrenich.alex.factoryquestions;
+package com.katrenich.alex.factoryquestions.activities;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -10,6 +10,7 @@ import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.katrenich.alex.factoryquestions.R;
 import com.katrenich.alex.factoryquestions.adapters.QuestionariesListAdapter;
 import com.katrenich.alex.factoryquestions.testMethodsMock.QuestionariesActivityMock;
 

@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme.Base">
         <activity
-            android:name=".SignActivity"
+            android:name=".activities.SignActivity"
             android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -18,14 +18,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".QuestionariesActivity">
+        <activity android:name=".activities.QuestionariesActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".QuestionsActivity">
+        <activity android:name=".activities.QuestionsActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

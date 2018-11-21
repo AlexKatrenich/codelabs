@@ -1,7 +1,9 @@
-package com.katrenich.alex.factoryquestions;
+package com.katrenich.alex.factoryquestions.activities;
 
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+
+import com.katrenich.alex.factoryquestions.R;
 
 public class QuestionsActivity extends BaseActivity {
 
