@@ -12,6 +12,7 @@ import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.katrenich.alex.factoryquestions.adapters.QuestionariesListAdapter;
 import com.katrenich.alex.factoryquestions.testMethodsMock.QuestionariesActivityMock;
 
 import java.util.ArrayList;
@@ -54,8 +55,8 @@ public class QuestionariesActivity extends BaseActivity implements View.OnClickL
         questionariesList = findViewById(R.id.lv_questionaries);
 
         /*Використовується ArrayAdapter для listView*/
-        ArrayAdapter<String> questionariesListAdapter = new ArrayAdapter<String>(
-                this, R.layout.group_list_view_item, getQuestionariesList());
+//        ArrayAdapter<String> questionariesListAdapter = new ArrayAdapter<String>(this, R.layout.group_list_view_item, getQuestionariesList());
+        ListAdapter questionariesListAdapter = new QuestionariesListAdapter(this, getQuestionariesList());
         Log.d(TAG, "initialize: ArrayAdapter");
 
         questionariesList.setAdapter(questionariesListAdapter);
