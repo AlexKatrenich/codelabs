@@ -52,15 +52,15 @@ public class QuestionariesListAdapter extends BaseAdapter {
         View view = convertView;
 
         if(view == null){
-            view = mLInflater.inflate(R.layout.test_list_view_item, parent, false);
+            view = mLInflater.inflate(R.layout.group_list_view_item, parent, false);
             Log.d(TAG, "getView: mLInflater.inflate -> new View");
         }
 
 
         // заповнюємо View з отриманого списку mList
-        TextView textView = view.findViewById(R.id.tv_test_item_numb);
+        TextView textView = view.findViewById(R.id.tv_questionnaire_number);
         textView.setText(String.valueOf(position + 1));
-        ((TextView)view.findViewById(R.id.tv_test_item_title)).setText(mList.get(position));
+        ((TextView)view.findViewById(R.id.tv_questionnaire_title)).setText(mList.get(position));
         return view;
     }
 }
