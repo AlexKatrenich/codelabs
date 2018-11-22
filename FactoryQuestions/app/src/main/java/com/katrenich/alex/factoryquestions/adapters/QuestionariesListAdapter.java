@@ -13,7 +13,7 @@ import com.katrenich.alex.factoryquestions.R;
 
 import java.util.List;
 
-/**/
+
 public class QuestionariesListAdapter extends BaseAdapter {
     private static final String TAG = "Adapter_";
     private Context mContext;
@@ -52,15 +52,15 @@ public class QuestionariesListAdapter extends BaseAdapter {
         View view = convertView;
 
         if(view == null){
-            view = mLInflater.inflate(R.layout.group_list_view_item, parent, false);
+            view = mLInflater.inflate(R.layout.test_list_view_item, parent, false);
             Log.d(TAG, "getView: mLInflater.inflate -> new View");
         }
 
 
         // заповнюємо View з отриманого списку mList
-        TextView textView = view.findViewById(R.id.tv_questionnaire_number);
+        TextView textView = view.findViewById(R.id.tv_test_item_numb);
         textView.setText("1");
-        ((TextView)view.findViewById(R.id.tv_questionnaire_title)).setText("Some text");
+        ((TextView)view.findViewById(R.id.tv_test_item_title)).setText("Some text");
         return view;
     }
 }
