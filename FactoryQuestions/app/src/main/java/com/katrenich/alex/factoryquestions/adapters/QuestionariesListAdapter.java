@@ -59,8 +59,8 @@ public class QuestionariesListAdapter extends BaseAdapter {
 
         // заповнюємо View з отриманого списку mList
         TextView textView = view.findViewById(R.id.tv_test_item_numb);
-        textView.setText("1");
-        ((TextView)view.findViewById(R.id.tv_test_item_title)).setText("Some text");
+        textView.setText(String.valueOf(position + 1));
+        ((TextView)view.findViewById(R.id.tv_test_item_title)).setText(mList.get(position));
         return view;
     }
 }
