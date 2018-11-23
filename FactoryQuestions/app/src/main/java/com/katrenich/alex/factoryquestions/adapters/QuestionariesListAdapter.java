@@ -67,9 +67,11 @@ public class QuestionariesListAdapter extends BaseAdapter implements AdapterView
     }
 
 
+    /*В адаптері реалізовано обробку itemClick на View*/
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         String mTitle = mList.get(position);
-        Toast.makeText(mContext, "Click on title" + mTitle, Toast.LENGTH_LONG).show();
+        Toast.makeText(mContext, "Click on title: " + mTitle, Toast.LENGTH_LONG).show();
     }
+
 }

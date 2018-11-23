@@ -28,12 +28,12 @@ public class QuestionariesActivity extends BaseActivity implements View.OnClickL
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_questionaries);
 
-        initialize();
+        init();
     }
 
 
     // метод для инициализации обектов Активити
-    private void initialize(){
+    private void init(){
         // инициализация тулбара
         mToolbar = findViewById(R.id.toolbar);
         setSupportActionBar(mToolbar);
@@ -47,7 +47,7 @@ public class QuestionariesActivity extends BaseActivity implements View.OnClickL
             @Override
             public void onClick(View v){
                 onBackPressed();
-                Log.d(TAG, "initialize: mToolbar -> onBackPressed()");
+                Log.d(TAG, "init: mToolbar -> onBackPressed()");
             }
         });
 
@@ -55,11 +55,12 @@ public class QuestionariesActivity extends BaseActivity implements View.OnClickL
 
         /*Використовується ArrayAdapter для listView*/
         ListAdapter questionariesListAdapter = new QuestionariesListAdapter(this, getQuestionariesList());
-        Log.d(TAG, "initialize: ArrayAdapter");
+        Log.d(TAG, "init: ArrayAdapter");
 
         questionariesList.setAdapter(questionariesListAdapter);
-        Log.d(TAG, "initialize: questionariesList.setAdapter(questionariesListAdapter)");
+        Log.d(TAG, "init: questionariesList.setAdapter(questionariesListAdapter)");
 
+        /**/
         questionariesList.setOnItemClickListener((AdapterView.OnItemClickListener) questionariesListAdapter);
     }
 
@@ -91,5 +92,13 @@ public class QuestionariesActivity extends BaseActivity implements View.OnClickL
 
     }
 
-
+    @Override
+    protected void onDestroy() {
+        /*Обнуляю посилання на об'єкти*/
+        setSupportActionBar(null);
+        mToolbar.setNavigationOnClickListener(null);
+        questionariesList.setAdapter(null);
+        questionariesList.setOnItemClickListener(null);
+        super.onDestroy();
+    }
 }
