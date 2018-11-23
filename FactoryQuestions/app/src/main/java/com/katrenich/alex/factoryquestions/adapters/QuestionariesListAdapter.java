@@ -6,15 +6,17 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.katrenich.alex.factoryquestions.R;
 
 import java.util.List;
 
 
-public class QuestionariesListAdapter extends BaseAdapter {
+public class QuestionariesListAdapter extends BaseAdapter implements AdapterView.OnItemClickListener{
     private static final String TAG = "Adapter_";
     private Context mContext;
     LayoutInflater mLInflater;
@@ -62,5 +64,12 @@ public class QuestionariesListAdapter extends BaseAdapter {
         textView.setText(String.valueOf(position + 1));
         ((TextView)view.findViewById(R.id.tv_questionnaire_title)).setText(mList.get(position));
         return view;
+    }
+
+
+    @Override
+    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+        String mTitle = mList.get(position);
+        Toast.makeText(mContext, "Click on title" + mTitle, Toast.LENGTH_LONG).show();
     }
 }

@@ -6,6 +6,7 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
@@ -58,6 +59,8 @@ public class QuestionariesActivity extends BaseActivity implements View.OnClickL
 
         questionariesList.setAdapter(questionariesListAdapter);
         Log.d(TAG, "initialize: questionariesList.setAdapter(questionariesListAdapter)");
+
+        questionariesList.setOnItemClickListener((AdapterView.OnItemClickListener) questionariesListAdapter);
     }
 
     /*Метод для отримання списку з назвами опитувальників*/
