@@ -19,4 +19,5 @@ public class QuestionsActivity extends BaseActivity {
         getSupportActionBar().setDisplayShowTitleEnabled(true);
         getSupportActionBar().setTitle("Questions list");
     }
+
 }

@@ -50,5 +50,10 @@ public class SignActivity extends BaseActivity {
         Log.d(TAG, "setupViewPager: viewPager.setAdapter(adapter)");
     }
 
+    @Override
+    protected void onDestroy() {
 
+        tabs.setupWithViewPager(null);
+        super.onDestroy();
+    }
 }

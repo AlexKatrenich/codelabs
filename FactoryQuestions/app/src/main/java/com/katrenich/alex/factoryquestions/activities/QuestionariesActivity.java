@@ -17,7 +17,7 @@ import com.katrenich.alex.factoryquestions.testMethodsMock.QuestionariesActivity
 
 import java.util.List;
 
-public class QuestionariesActivity extends BaseActivity implements View.OnClickListener{
+public class QuestionariesActivity extends BaseActivity {
     private final String TAG = "QuestionariesActivity_";
     private Toolbar mToolbar;
     private ListView questionariesList;
@@ -87,10 +87,6 @@ public class QuestionariesActivity extends BaseActivity implements View.OnClickL
         return true;
     }
 
-    @Override
-    public void onClick(View v) {
-
-    }
 
     @Override
     protected void onDestroy() {
