@@ -10,7 +10,7 @@
     tools:context=".activities.QuestionariesActivity">
 
     <android.support.design.widget.AppBarLayout
-        android:id="@+id/appbar"
+        android:id="@+id/appbar_questionnaries"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:theme="@style/ButtonTheme.Base">
@@ -31,8 +31,8 @@
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/appbar"
-        app:layout_constraintTop_toBottomOf="@+id/appbar"
+        app:layout_constraintStart_toEndOf="@+id/appbar_questionnaries"
+        app:layout_constraintTop_toBottomOf="@+id/appbar_questionnaries"
         android:divider="@null"
         android:dividerHeight="0dp"/>
 

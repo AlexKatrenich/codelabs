@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<android.support.constraint.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -9,10 +9,10 @@
     tools:context=".activities.QuestionsActivity">
 
     <android.support.design.widget.AppBarLayout
-        android:id="@+id/appbar"
+        android:id="@+id/appbar_questions"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:theme="@style/ButtonTheme.Base">
+        android:theme="@style/AppBarLayout.Base">
 
         <android.support.v7.widget.Toolbar
             android:id="@+id/toolbar"
@@ -20,178 +20,9 @@
             android:layout_height="?attr/actionBarSize"
             android:background="?attr/colorPrimary"
             app:layout_scrollFlags="scroll|enterAlways"
-            app:popupTheme="@style/ButtonTheme.Base">
+            app:popupTheme="@style/AppBarLayout.Base"
+            app:titleTextColor="@android:color/white">
         </android.support.v7.widget.Toolbar>
     </android.support.design.widget.AppBarLayout>
 
-    <android.support.v7.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="8dp"
-        app:cardCornerRadius="8dp"
-        app:cardBackgroundColor="@color/colorPrimary">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="1"
-                android:textSize="16dp"
-                android:layout_margin="13dp"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="In writing we know they are questions because they have question marks. In speaking we know they are ..."
-                android:textSize="16dp"
-                android:layout_margin="13dp"
-                android:singleLine="false"
-                android:scrollHorizontally="false"
-                android:maxLines="4"
-                />
-
-        </LinearLayout>
-
-    </android.support.v7.widget.CardView>
-
-    <android.support.v7.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="8dp"
-        app:cardCornerRadius="8dp"
-        app:cardBackgroundColor="@color/colorPrimary">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="2"
-                android:textSize="16dp"
-                android:layout_margin="13dp"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="In writing we know they are questions because they have question marks. In speaking we know they are ..."
-                android:textSize="16dp"
-                android:layout_margin="13dp"
-                android:singleLine="false"
-                android:scrollHorizontally="false"
-                android:maxLines="3"
-                />
-
-        </LinearLayout>
-
-    </android.support.v7.widget.CardView>
-
-    <android.support.v7.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="8dp"
-        app:cardCornerRadius="8dp"
-        app:cardBackgroundColor="@color/colorPrimary">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="3"
-                android:textSize="16dp"
-                android:layout_margin="13dp"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="In writing we know they are questions because they have question marks. In speaking we know they are ..."
-                android:textSize="16dp"
-                android:layout_margin="13dp"
-                android:singleLine="false"
-                android:scrollHorizontally="false"
-                android:maxLines="3"
-                />
-
-        </LinearLayout>
-
-    </android.support.v7.widget.CardView>
-
-    <android.support.v7.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="8dp"
-        app:cardCornerRadius="8dp"
-        app:cardBackgroundColor="@color/colorPrimary">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="4"
-                android:textSize="16dp"
-                android:layout_margin="13dp"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="In writing we know they are questions because they have question marks. In speaking we know they are ..."
-                android:textSize="16dp"
-                android:layout_margin="13dp"
-                android:singleLine="false"
-                android:scrollHorizontally="false"
-                android:maxLines="3"
-                />
-
-        </LinearLayout>
-
-    </android.support.v7.widget.CardView>
-
-    <android.support.v7.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="8dp"
-        app:cardCornerRadius="8dp"
-        app:cardBackgroundColor="@color/colorPrimary">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="5"
-                android:textSize="16dp"
-                android:layout_margin="13dp"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="In writing we know they are questions because they have question marks. In speaking we know they are ..."
-                android:textSize="16dp"
-                android:layout_margin="13dp"
-                android:singleLine="false"
-                android:scrollHorizontally="false"
-                android:maxLines="3"
-                />
-
-        </LinearLayout>
-
-    </android.support.v7.widget.CardView>
-
-</LinearLayout>
+</android.support.constraint.ConstraintLayout>

@@ -14,7 +14,12 @@
         <item name="android:background">@color/colorPrimary</item>
         <item name="android:fontFamily">sans-serif</item>
         <item name="android:textSize">18sp</item>
+    </style>
 
+    <style name="AppBarLayout.Base" parent="AppTheme.Base">
+        <item name="android:background">@color/colorPrimary</item>
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:textSize">18sp</item>
     </style>
 
     
