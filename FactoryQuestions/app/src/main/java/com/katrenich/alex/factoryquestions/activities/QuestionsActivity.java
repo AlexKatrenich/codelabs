@@ -1,6 +1,8 @@
 package com.katrenich.alex.factoryquestions.activities;
 
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
@@ -9,7 +11,8 @@ import com.katrenich.alex.factoryquestions.R;
 
 public class QuestionsActivity extends BaseActivity {
     private final String TAG = "QuestionsActivity_";
-    Toolbar mToolbar;
+    private Toolbar mToolbar;
+    private RecyclerView mRecycleView;
 
 
     @Override
@@ -41,11 +44,13 @@ public class QuestionsActivity extends BaseActivity {
             }
         });
 
-
+        mRecycleView.setLayoutManager(new LinearLayoutManager(this));
     }
 
     @Override
     protected void onDestroy() {
+        mToolbar.setNavigationOnClickListener(null);
+        mRecycleView.setLayoutManager(null);
         super.onDestroy();
     }
 }
