@@ -23,7 +23,7 @@ public class QuestionsActivity extends BaseActivity {
 
     private void init() {
         /*Ініціалізація верхнього меню*/
-        mToolbar = findViewById(R.id.toolbar);
+        mToolbar = findViewById(R.id.toolbar_questions_list);
         setSupportActionBar(mToolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(false);

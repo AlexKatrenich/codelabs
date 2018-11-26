@@ -35,7 +35,7 @@ public class QuestionariesActivity extends BaseActivity {
     // метод для инициализации обектов Активити
     private void init(){
         // инициализация тулбара
-        mToolbar = findViewById(R.id.toolbar);
+        mToolbar = findViewById(R.id.toolbar_questions_list);
         setSupportActionBar(mToolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(false);
