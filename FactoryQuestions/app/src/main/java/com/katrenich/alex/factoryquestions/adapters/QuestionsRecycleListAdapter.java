@@ -6,10 +6,12 @@ import android.view.View;
 import android.view.ViewGroup;
 
 public class QuestionsRecycleListAdapter extends RecyclerView.Adapter<QuestionsRecycleListAdapter.QuestionsViewHolder> {
+    private RecyclerView.ViewHolder mViewHolder;
 
     @NonNull
     @Override
     public QuestionsViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+
         return null;
     }
 
