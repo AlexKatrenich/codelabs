@@ -20,7 +20,7 @@ public class Questionnaire {
     }
 
 
-    /*Getters adn Setters for fields*/
+    /*Getters and Setters for fields*/
     public int getQuestionnaireId() {
         return questionnaireId;
     }
