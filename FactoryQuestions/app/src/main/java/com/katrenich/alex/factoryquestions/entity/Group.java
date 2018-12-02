@@ -63,6 +63,7 @@ public class Group {
                 Objects.equals(users, group.users);
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     @Override
     public int hashCode() {
 
