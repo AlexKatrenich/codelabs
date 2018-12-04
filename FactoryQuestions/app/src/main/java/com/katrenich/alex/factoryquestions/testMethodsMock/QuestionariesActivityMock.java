@@ -4,7 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class QuestionariesActivityMock {
-    public List<String> getQuestionariesTitle(){
+
+    public List<String> getQuestionariesList(){
         List<String> list = new ArrayList<>(20);
         list.add("Human resourses department");
         list.add("Accounting department");

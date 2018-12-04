@@ -17,6 +17,11 @@ public class Question {
 
     }
 
+    public Question(String questionText, int questionId){
+        this.questionText = questionText;
+        this.questionId = questionId;
+    }
+
     public Question(int questionId,
                     String questionText,
                     int answerPower,

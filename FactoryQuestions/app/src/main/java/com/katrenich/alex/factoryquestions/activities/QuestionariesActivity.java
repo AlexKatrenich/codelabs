@@ -70,8 +70,8 @@ public class QuestionariesActivity extends BaseActivity {
         List<String> list;
 
         /*Заповнення списку тестовими даними, заглушка на back-end*/
-        list = new QuestionariesActivityMock().getQuestionariesTitle();
-        Log.d(TAG, "getQuestionariesList: QuestionariesActivityMock().getQuestionariesTitle()");
+        list = new QuestionariesActivityMock().getQuestionariesList();
+        Log.d(TAG, "getQuestionariesList: QuestionariesActivityMock().getQuestionariesList()");
         return list;
     }
 
