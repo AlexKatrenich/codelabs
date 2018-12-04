@@ -11,14 +11,20 @@ import com.katrenich.alex.factoryquestions.R;
 import com.katrenich.alex.factoryquestions.entity.Question;
 import com.katrenich.alex.factoryquestions.testMethodsMock.QuestionsActivityMock;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class QuestionsRecycleListAdapter extends RecyclerView.Adapter<QuestionsRecycleListAdapter.QuestionsViewHolder> {
     private List<Question> qList;
 
+    public QuestionsRecycleListAdapter(){
+        setItems();
+    }
+
     /*Метод для заповнення списку запитань*/
     public void setItems(){
         qList = new QuestionsActivityMock().getSimpleQuestionsList();
+        notifyDataSetChanged();
     }
 
 
@@ -32,13 +38,14 @@ public class QuestionsRecycleListAdapter extends RecyclerView.Adapter<QuestionsR
 
     @Override
     public void onBindViewHolder(@NonNull QuestionsViewHolder holder, int position) {
-
+        holder.bind(qList.get(position));
     }
 
     @Override
     public int getItemCount() {
         return qList.size();
     }
+
 
 
     /* Вбудований клас для імплементації View-компонент
@@ -58,4 +65,5 @@ public class QuestionsRecycleListAdapter extends RecyclerView.Adapter<QuestionsR
             qCaption.setText(question.getQuestionText());
         }
     }
+
 }

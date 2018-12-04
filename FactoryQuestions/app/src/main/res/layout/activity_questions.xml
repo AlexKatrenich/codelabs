@@ -32,7 +32,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         android:orientation="vertical"
-        app:layout_constraintTop_toBottomOf="@+id/appbar_questions" />
+        app:layout_constraintTop_toBottomOf="@+id/appbar_questions"/>
 
 
 </android.support.constraint.ConstraintLayout>

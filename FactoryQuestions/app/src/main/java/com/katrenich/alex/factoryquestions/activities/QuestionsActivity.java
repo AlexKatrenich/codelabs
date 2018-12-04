@@ -8,11 +8,13 @@ import android.util.Log;
 import android.view.View;
 
 import com.katrenich.alex.factoryquestions.R;
+import com.katrenich.alex.factoryquestions.adapters.QuestionsRecycleListAdapter;
 
 public class QuestionsActivity extends BaseActivity {
     private final String TAG = "QuestionsActivity_";
     private Toolbar mToolbar;
     private RecyclerView mRecycleView;
+    private QuestionsRecycleListAdapter qAdapter;
 
 
     @Override
@@ -44,7 +46,13 @@ public class QuestionsActivity extends BaseActivity {
             }
         });
 
+        /*Ініціалізація recyclerView*/
+        mRecycleView = findViewById(R.id.rv_questions_list);
         mRecycleView.setLayoutManager(new LinearLayoutManager(this));
+
+        /*Ініціалізація та встановлення адаптера в recyclerview*/
+        qAdapter = new QuestionsRecycleListAdapter();
+        mRecycleView.setAdapter(qAdapter);
     }
 
     @Override
