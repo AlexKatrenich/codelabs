@@ -8,6 +8,17 @@
     android:orientation="vertical"
     tools:context=".activities.QuestionsActivity">
 
+    <FrameLayout
+        android:id="@+id/frm_question_list_fragment"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/appbar_questions">
+
+    </FrameLayout>
+
     <android.support.design.widget.AppBarLayout
         android:id="@+id/appbar_questions"
         android:layout_width="match_parent"
@@ -24,15 +35,6 @@
             app:titleTextColor="@android:color/white"/>
     </android.support.design.widget.AppBarLayout>
 
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/rv_questions_list"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:orientation="vertical"
-        app:layout_constraintTop_toBottomOf="@+id/appbar_questions"/>
 
 
 </android.support.constraint.ConstraintLayout>

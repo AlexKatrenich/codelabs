@@ -78,7 +78,7 @@ public class SignInFragment extends Fragment implements View.OnClickListener{
                 Log.d(TAG, "onClick: new Intent(v.getContext(), QuestionariesActivity.class)");
                 startActivity(intent);
                 // Знищуємо поточний фрагмент, щоб до нього не повертатись
-                //onDestroy();
+                onDestroy();
             } else {
                 Toast.makeText(v.getContext(), "Login or password was incorrect", Toast.LENGTH_LONG).show();
             }

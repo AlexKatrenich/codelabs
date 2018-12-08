@@ -1,21 +1,25 @@
 package com.katrenich.alex.factoryquestions.activities;
 
+
 import android.os.Bundle;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
+import android.app.Fragment;
+import android.app.FragmentTransaction;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
 
 import com.katrenich.alex.factoryquestions.R;
-import com.katrenich.alex.factoryquestions.adapters.QuestionsRecycleListAdapter;
 
 public class QuestionsActivity extends BaseActivity {
     private final String TAG = "QuestionsActivity_";
     private Toolbar mToolbar;
-    private RecyclerView mRecycleView;
-    private QuestionsRecycleListAdapter qAdapter;
-
+    private Fragment qListFragment,
+            qSingleChoiseFragment,
+            qMultipleChoiseFragment,
+            qStringAnswerFragment,
+            qDoubleAnswerFragment,
+            qIntAnswerFragment;
+    private FragmentTransaction fTrans;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,19 +50,21 @@ public class QuestionsActivity extends BaseActivity {
             }
         });
 
-        /*Ініціалізація recyclerView*/
-        mRecycleView = findViewById(R.id.rv_questions_list);
-        mRecycleView.setLayoutManager(new LinearLayoutManager(this));
+        qListFragment = new Fragment();
+        fTrans = getFragmentManager().beginTransaction();
+        fTrans.add(R.id.frm_question_list_fragment, qListFragment);
+        fTrans.commit();
 
-        /*Ініціалізація та встановлення адаптера в recyclerview*/
-        qAdapter = new QuestionsRecycleListAdapter();
-        mRecycleView.setAdapter(qAdapter);
+        qSingleChoiseFragment = new Fragment();
+        qMultipleChoiseFragment = new Fragment();
+        qStringAnswerFragment = new Fragment();
+        qDoubleAnswerFragment = new Fragment();
+        qIntAnswerFragment = new Fragment();
     }
 
     @Override
     protected void onDestroy() {
         mToolbar.setNavigationOnClickListener(null);
-        mRecycleView.setLayoutManager(null);
         super.onDestroy();
     }
 }

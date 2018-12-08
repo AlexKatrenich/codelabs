@@ -34,7 +34,7 @@ public class QuestionsFragment extends Fragment {
 
     private void init(View view) {
         /*initialize RecyclerView*/
-        questionRecView = view.findViewById(R.id.rv_questions_list_fragment);
+        questionRecView = view.findViewById(R.id.rv_questions_list);
         questionRecView.setLayoutManager(new LinearLayoutManager(view.getContext()));
 
         /*initialize and add Adapter to RecyclerView*/
