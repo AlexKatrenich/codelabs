@@ -2,13 +2,14 @@ package com.katrenich.alex.factoryquestions.activities;
 
 
 import android.os.Bundle;
-import android.app.Fragment;
-import android.app.FragmentTransaction;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
 
 import com.katrenich.alex.factoryquestions.R;
+import com.katrenich.alex.factoryquestions.fragments.QuestionsFragment;
 
 public class QuestionsActivity extends BaseActivity {
     private final String TAG = "QuestionsActivity_";
@@ -27,10 +28,10 @@ public class QuestionsActivity extends BaseActivity {
         setContentView(R.layout.activity_questions);
 
         // Ініціалізація полів екрану та змінних
-        init();
+        init(savedInstanceState);
     }
 
-    private void init() {
+    private void init(Bundle savedInstanceState) {
         /*Ініціалізація верхнього меню*/
         mToolbar = findViewById(R.id.toolbar_questions_list);
         setSupportActionBar(mToolbar);
@@ -50,16 +51,12 @@ public class QuestionsActivity extends BaseActivity {
             }
         });
 
-        qListFragment = new Fragment();
-        fTrans = getFragmentManager().beginTransaction();
-        fTrans.add(R.id.frm_question_list_fragment, qListFragment);
-        fTrans.commit();
+        if (savedInstanceState == null){
+            getSupportFragmentManager()
+                    .beginTransaction()
+                    .add(R.id.frm_question_list_fragment, new QuestionsFragment()).commit();
+        }
 
-        qSingleChoiseFragment = new Fragment();
-        qMultipleChoiseFragment = new Fragment();
-        qStringAnswerFragment = new Fragment();
-        qDoubleAnswerFragment = new Fragment();
-        qIntAnswerFragment = new Fragment();
     }
 
     @Override
