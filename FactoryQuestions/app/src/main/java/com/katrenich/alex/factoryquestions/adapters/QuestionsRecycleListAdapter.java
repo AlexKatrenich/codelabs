@@ -11,7 +11,6 @@ import com.katrenich.alex.factoryquestions.R;
 import com.katrenich.alex.factoryquestions.entity.Question;
 import com.katrenich.alex.factoryquestions.testMethodsMock.QuestionsActivityMock;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class QuestionsRecycleListAdapter extends RecyclerView.Adapter<QuestionsRecycleListAdapter.QuestionsViewHolder> {
