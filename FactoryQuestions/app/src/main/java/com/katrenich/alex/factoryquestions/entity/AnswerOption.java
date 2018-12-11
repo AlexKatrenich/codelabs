@@ -6,9 +6,9 @@ import android.support.annotation.RequiresApi;
 import java.util.Objects;
 
 public class AnswerOption {
-    private int answerOptionID;
-    private String answerText;
-    private int answerSequenceNumber;
+    private int answerOptionID; /*ІД в таблиці відповідей БД*/
+    private String answerText; /*текст відповіді*/
+    private int answerSequenceNumber; /*Порядковий номер в списку відповідей*/
     private int answerValue; /*Числове значення важливості відповіді*/
 
     public AnswerOption() {}

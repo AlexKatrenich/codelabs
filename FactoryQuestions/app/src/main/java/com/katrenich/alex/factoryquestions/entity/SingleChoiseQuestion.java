@@ -6,8 +6,18 @@ import android.support.annotation.RequiresApi;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MultipleChoiseQuestion extends Question {
+public class SingleChoiseQuestion extends Question {
     private List<AnswerOption> answersList = new ArrayList<>();
+    private AnswerOption checkedAnswer;
+
+
+    public AnswerOption getCheckedAnswer() {
+        return checkedAnswer;
+    }
+
+    public void setCheckedAnswer(AnswerOption checkedAnswer) {
+        this.checkedAnswer = checkedAnswer;
+    }
 
     public List<AnswerOption> getAnswersList() {
         return answersList;
