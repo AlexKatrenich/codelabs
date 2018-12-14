@@ -8,7 +8,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.katrenich.alex.factoryquestions.R;
-import com.katrenich.alex.factoryquestions.entity.Question;
+import com.katrenich.alex.factoryquestions.entity.questions.Question;
 import com.katrenich.alex.factoryquestions.testMethodsMock.QuestionsActivityMock;
 
 import java.util.List;

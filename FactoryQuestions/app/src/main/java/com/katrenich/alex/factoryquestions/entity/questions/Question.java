@@ -1,4 +1,4 @@
-package com.katrenich.alex.factoryquestions.entity;
+package com.katrenich.alex.factoryquestions.entity.questions;
 
 import android.os.Build;
 import android.support.annotation.RequiresApi;

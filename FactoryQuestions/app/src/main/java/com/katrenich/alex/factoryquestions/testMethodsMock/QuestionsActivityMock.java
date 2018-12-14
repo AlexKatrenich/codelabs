@@ -1,6 +1,6 @@
 package com.katrenich.alex.factoryquestions.testMethodsMock;
 
-import com.katrenich.alex.factoryquestions.entity.Question;
+import com.katrenich.alex.factoryquestions.entity.questions.Question;
 
 import java.util.ArrayList;
 import java.util.List;

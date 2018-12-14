@@ -1,23 +1,16 @@
-package com.katrenich.alex.factoryquestions.entity;
+package com.katrenich.alex.factoryquestions.entity.questions;
 
 import android.os.Build;
 import android.support.annotation.RequiresApi;
 
+import com.katrenich.alex.factoryquestions.entity.answers.AnswerOption;
+
 import java.util.ArrayList;
 import java.util.List;
 
-public class SingleChoiseQuestion extends Question {
+public class MultipleChoiseQuestion extends Question {
     private List<AnswerOption> answersList = new ArrayList<>();
-    private AnswerOption checkedAnswer;
-
-
-    public AnswerOption getCheckedAnswer() {
-        return checkedAnswer;
-    }
-
-    public void setCheckedAnswer(AnswerOption checkedAnswer) {
-        this.checkedAnswer = checkedAnswer;
-    }
+    private List<AnswerOption> userAnswers = new ArrayList<>();
 
     public List<AnswerOption> getAnswersList() {
         return answersList;
@@ -25,6 +18,14 @@ public class SingleChoiseQuestion extends Question {
 
     public void setAnswersList(List<AnswerOption> answersList) {
         this.answersList = answersList;
+    }
+
+    public void addUserAnswer(AnswerOption answer){
+        userAnswers.add(answer);
+    }
+
+    public void removeUserAnswer(AnswerOption answerOption){
+        userAnswers.remove(answerOption);
     }
 
     @RequiresApi(api = Build.VERSION_CODES.KITKAT)
