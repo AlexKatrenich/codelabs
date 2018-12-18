@@ -52,12 +52,13 @@ public class QuestionsActivity extends BaseActivity {
         });
 
         if (savedInstanceState == null){
+
+            qListFragment = new QuestionsFragment(); /*Створємо фрагмент для відображення списку запитань*/
+
             getSupportFragmentManager()
                     .beginTransaction()
-                    .add(R.id.frm_question_list_fragment, new QuestionsFragment()).commit();
+                    .add(R.id.frm_question_list_fragment, qListFragment).commit();
         }
-
-
 
     }
 

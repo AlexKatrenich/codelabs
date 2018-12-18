@@ -25,7 +25,6 @@ public class SingleAnswer extends Answer {
     }
 
     /*Getters and Setters*/
-
     public AnswerOption getUserAnswer() {
         return userAnswer;
     }
@@ -40,4 +39,5 @@ public class SingleAnswer extends Answer {
                 "userAnswer=" + userAnswer +
                 '}';
     }
+
 }
