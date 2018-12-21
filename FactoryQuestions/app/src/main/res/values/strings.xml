@@ -14,4 +14,6 @@
     <string name="test_user_password">test</string>
     <string name="questionaries_activity_title">Chose questionnaire</string>
     <string name="questions_list_activity_title">Questions list</string>
+    <string name="btn_next_question_fragment">Next</string>
+    <string name="btn_prev_question_fragment">Previous</string>
 </resources>
