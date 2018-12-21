@@ -17,7 +17,7 @@
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:text="1" />
+        tools:text="8" />
 
     <TextView
         android:id="@+id/tv_multi_question_fragment"
@@ -28,6 +28,7 @@
         android:layout_marginRight="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
+        android:singleLine="false"
         android:textColor="@android:color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/tv_multi_question_number_fragment"
@@ -54,6 +55,7 @@
         android:layout_marginStart="8dp"
         android:text="@string/btn_prev_question_fragment"
         android:textAllCaps="false"
+        android:textColor="@android:color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/btn_next_multi_question_fragment"
         app:layout_constraintHorizontal_bias="0.5"
@@ -69,6 +71,7 @@
         android:layout_marginRight="8dp"
         android:text="@string/btn_next_question_fragment"
         android:textAllCaps="false"
+        android:textColor="@android:color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
