@@ -67,4 +67,6 @@ public class QuestionsActivity extends BaseActivity {
         mToolbar.setNavigationOnClickListener(null);
         super.onDestroy();
     }
+
+
 }
