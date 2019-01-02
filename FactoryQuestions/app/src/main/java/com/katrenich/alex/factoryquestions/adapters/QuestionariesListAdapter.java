@@ -17,7 +17,7 @@ import java.util.List;
 
 
 public class QuestionariesListAdapter extends BaseAdapter implements AdapterView.OnItemClickListener{
-    private static final String TAG = "Adapter_";
+    private static final String TAG = "QuestionariesAdapter_";
     private Context mContext;
     LayoutInflater mLInflater;
     List<String> mList;
@@ -61,7 +61,7 @@ public class QuestionariesListAdapter extends BaseAdapter implements AdapterView
 
         // заповнюємо View з отриманого списку mList
         TextView textView = view.findViewById(R.id.tv_questionnaire_number);
-        textView.setText(String.valueOf(position + 1));
+
         ((TextView)view.findViewById(R.id.tv_questionnaire_title)).setText(mList.get(position));
         return view;
     }
