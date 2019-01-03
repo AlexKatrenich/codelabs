@@ -12,7 +12,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.Spinner;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.katrenich.alex.factoryquestions.*;
@@ -57,7 +56,7 @@ public class SignUpFragment extends Fragment implements View.OnClickListener{
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.signup_fragment, null);
+        return inflater.inflate(R.layout.fragment_signup, null);
     }
 
     @Override
@@ -83,12 +82,12 @@ public class SignUpFragment extends Fragment implements View.OnClickListener{
 
         // створюється адаптер та заповнюється даними для випадаючого списку
         GroupSpinnerAdapter<String> spinnerAdapter = new GroupSpinnerAdapter<>(v.getContext(),
-                R.layout.spinner_item, spinnerTestData);
+                R.layout.item_spinner, spinnerTestData);
 
 
 
         // задається вигляд списку в режимі відкритого вікна
-        spinnerAdapter.setDropDownViewResource(R.layout.group_spinner_dropdown_item);
+        spinnerAdapter.setDropDownViewResource(R.layout.item_group_spinner_dropdown);
         spinGroupList.setAdapter(spinnerAdapter);
         spinGroupList.setSelection(0); // задаємо позицію списку для відображення по замовчуванню
     }

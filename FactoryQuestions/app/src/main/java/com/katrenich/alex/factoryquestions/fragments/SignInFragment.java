@@ -36,7 +36,7 @@ public class SignInFragment extends Fragment implements View.OnClickListener{
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.signin_fragment, null);
+        return inflater.inflate(R.layout.fragment_signin, null);
     }
 
     @Override

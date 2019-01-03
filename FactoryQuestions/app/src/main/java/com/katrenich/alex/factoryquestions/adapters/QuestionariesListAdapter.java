@@ -54,7 +54,7 @@ public class QuestionariesListAdapter extends BaseAdapter implements AdapterView
         View view = convertView;
 
         if(view == null){
-            view = mLInflater.inflate(R.layout.group_list_view_item, parent, false);
+            view = mLInflater.inflate(R.layout.item_group_list_view, parent, false);
             Log.d(TAG, "getView: mLInflater.inflate -> new View");
         }
 

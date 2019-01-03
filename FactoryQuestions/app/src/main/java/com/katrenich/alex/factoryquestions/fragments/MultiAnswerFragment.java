@@ -22,7 +22,7 @@ public class MultiAnswerFragment extends Fragment implements View.OnClickListene
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.multi_answer_fragment, null);
+        return inflater.inflate(R.layout.fragment_multi_answer, null);
 
     }
 

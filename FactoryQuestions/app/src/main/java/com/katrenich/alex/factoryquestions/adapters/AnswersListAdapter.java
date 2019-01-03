@@ -1,6 +1,7 @@
 package com.katrenich.alex.factoryquestions.adapters;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,6 +17,15 @@ public class AnswersListAdapter extends BaseAdapter {
     private Context mContext;
     private LayoutInflater mLayoutInflater;
     private List<AnswerOption> aList;
+
+    public AnswersListAdapter(Context mContext, List<AnswerOption> aList) {
+        this.mContext = mContext;
+        this.aList = aList;
+        mLayoutInflater = (LayoutInflater) mContext
+                .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+
+        Log.d(TAG, aList.toString());
+    }
 
     @Override
     public int getCount() {
@@ -34,6 +44,12 @@ public class AnswersListAdapter extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
+        View view = convertView;
+
+        if (view == null){
+            //TODO
+        }
+
         return null;
     }
 }
