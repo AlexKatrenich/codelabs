@@ -58,9 +58,8 @@ public class QuestionariesListAdapter extends BaseAdapter implements AdapterView
             Log.d(TAG, "getView: mLInflater.inflate -> new View");
         }
 
-
         // заповнюємо View з отриманого списку mList
-        TextView textView = view.findViewById(R.id.tv_questionnaire_number);
+        ((TextView)view.findViewById(R.id.tv_questionnaire_number)).setText(String.valueOf(position));
 
         ((TextView)view.findViewById(R.id.tv_questionnaire_title)).setText(mList.get(position));
         return view;

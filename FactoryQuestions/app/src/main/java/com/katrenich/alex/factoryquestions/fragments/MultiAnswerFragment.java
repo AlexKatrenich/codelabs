@@ -40,6 +40,7 @@ public class MultiAnswerFragment extends Fragment implements View.OnClickListene
         btnPrev = view.findViewById(R.id.btn_prev_multi_question_fragment);
         btnPrev.setOnClickListener(this);
         lvQuestions = view.findViewById(R.id.lv_answers_multi_question_fragment);
+
     }
 
     @Override
