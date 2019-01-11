@@ -5,18 +5,18 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
 import com.katrenich.alex.factoryquestions.R;
 import com.katrenich.alex.factoryquestions.entity.answers.AnswerOption;
 
-import org.w3c.dom.Text;
-
 import java.util.List;
 
-public class AnswersListAdapter extends BaseAdapter {
+public class AnswersListAdapter extends BaseAdapter implements AdapterView.OnItemClickListener{
     private final String TAG = "AnswersAdapter_";
     private Context mContext; /*контекст, передається при ініціалізації адаптера*/
     private LayoutInflater mLayoutInflater;
@@ -27,8 +27,6 @@ public class AnswersListAdapter extends BaseAdapter {
         this.aList = aList;
         mLayoutInflater = (LayoutInflater) mContext
                 .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-
-        Log.d(TAG, aList.toString());
     }
 
     @Override
@@ -55,10 +53,17 @@ public class AnswersListAdapter extends BaseAdapter {
             Log.d(TAG, "getView: View was inflated");
         }
 
-        ((TextView) view.findViewById(R.id.tv_answer_option_number)).setText(String.valueOf(position + 1));
+        ((TextView) view.findViewById(R.id.tv_answer_option_number)).setText(String.valueOf(aList.get(position).getAnswerSequenceNumber()));
         ((TextView) view.findViewById(R.id.tv_answer_option_text)).setText(aList.get(position).getAnswerText());
-
-
+        view.setClickable(true);
         return view;
     }
+
+    @Override
+    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+        String answerText = aList.get(position).getAnswerText();
+        Toast.makeText(mContext, "Answer: " + answerText, Toast.LENGTH_SHORT).show();
+    }
+
+
 }

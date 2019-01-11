@@ -1,5 +1,6 @@
 package com.katrenich.alex.factoryquestions.testMethodsMock;
 
+import com.katrenich.alex.factoryquestions.entity.questions.MultipleChoiseQuestion;
 import com.katrenich.alex.factoryquestions.entity.questions.Question;
 
 import java.util.ArrayList;
@@ -29,5 +30,15 @@ public class QuestionsActivityMock {
         qList.add(new Question("Нет желания все бросить к «чертовой бабушке» и начать что-то совершенно новое?", qList.size() + 1));
         qList.add(new Question("Сформируйте Ваше отношение к жизни (бизнесу, семье, коллегам, сотрудникам) в пяти словах?", qList.size() + 1));
         return qList;
+    }
+
+    /*метод повертає заповнений об'єкт питання з багатьма відповідями(AnswerOption)*/
+    public MultipleChoiseQuestion getMultipleChoiseQuestion(){
+        MultipleChoiseQuestion mQuestion = new MultipleChoiseQuestion();
+        mQuestion.setQuestionText("Do you like this App");
+        mQuestion.setQuestionId(354);
+        mQuestion.setSequenceNumber(4);
+        mQuestion.setAnswersList(new AnswerOptionsMock().getAnswerOptionsList());
+        return mQuestion;
     }
 }

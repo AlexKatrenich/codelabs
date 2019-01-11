@@ -60,7 +60,7 @@ public class QuestionariesActivity extends BaseActivity {
         questionariesList.setAdapter(questionariesListAdapter);
         Log.d(TAG, "init: questionariesList.setAdapter(questionariesListAdapter)");
 
-        /**/
+        /*Задаємо слухач для обробки кліку по елементу списку*/
         questionariesList.setOnItemClickListener((AdapterView.OnItemClickListener) questionariesListAdapter);
     }
 
