@@ -5,7 +5,9 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="horizontal">
+    android:orientation="horizontal"
+    android:descendantFocusability="blocksDescendants">
+    <!--android:descendantFocusability="blocksDescendants" - В кастомном макете элементов списка все кликабельные элементы должны быть отключены(Stackoverflow)-->
 
     <CheckBox
         android:id="@+id/cb_answer_is_checked"

@@ -44,7 +44,7 @@ public class MultiAnswerFragment extends Fragment implements View.OnClickListene
 
     private void init(View view) {
         /*Читаємо питання для відображення на екрані*/
-        boolean questionGet = readQuestion();
+        readQuestion();
 
         tvNumbQuestion = view.findViewById(R.id.tv_multi_question_number_fragment);
         tvNumbQuestion.setText(String.valueOf(mQuestion.getSequenceNumber()));
@@ -83,6 +83,7 @@ public class MultiAnswerFragment extends Fragment implements View.OnClickListene
         btnNext.setOnClickListener(null);
         lvAnswers.setOnItemClickListener(null);
         lvAnswers.setAdapter(null);
+        Log.d(TAG, "onDestroy: Memory clear");
         super.onDestroy();
     }
 

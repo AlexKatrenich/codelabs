@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.BaseAdapter;
+import android.widget.CheckBox;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -53,17 +54,25 @@ public class AnswersListAdapter extends BaseAdapter implements AdapterView.OnIte
             Log.d(TAG, "getView: View was inflated");
         }
 
-        ((TextView) view.findViewById(R.id.tv_answer_option_number)).setText(String.valueOf(aList.get(position).getAnswerSequenceNumber()));
-        ((TextView) view.findViewById(R.id.tv_answer_option_text)).setText(aList.get(position).getAnswerText());
-        view.setClickable(true);
+        final AnswerOption mAnswer = aList.get(position);
+
+        ((TextView) view.findViewById(R.id.tv_answer_option_number))
+                .setText(String.valueOf(mAnswer.getAnswerSequenceNumber()));
+
+        ((TextView) view.findViewById(R.id.tv_answer_option_text))
+                .setText(mAnswer.getAnswerText());
+
         return view;
     }
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        String answerText = aList.get(position).getAnswerText();
-        Toast.makeText(mContext, "Answer: " + answerText, Toast.LENGTH_SHORT).show();
-    }
+        ((CheckBox)view.findViewById(R.id.cb_answer_is_checked)).toggle(); /*викликаємо натиснення на чекбокс*/
 
+        Toast.makeText(view.getContext(), "Answer: " + aList.get(position).getAnswerText()
+                , Toast.LENGTH_LONG).show();
+
+        Log.d(TAG, "onItemClick: CliCK");
+    }
 
 }
