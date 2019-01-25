@@ -1,7 +1,8 @@
 package com.katrenich.alex.factoryquestions.testMethodsMock;
 
-import com.katrenich.alex.factoryquestions.entity.questions.MultipleChoiseQuestion;
+import com.katrenich.alex.factoryquestions.entity.questions.MultipleChoiceQuestion;
 import com.katrenich.alex.factoryquestions.entity.questions.Question;
+import com.katrenich.alex.factoryquestions.entity.questions.SingleChoiceQuestion;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -33,12 +34,22 @@ public class QuestionsActivityMock {
     }
 
     /*метод повертає заповнений об'єкт питання з багатьма відповідями(AnswerOption)*/
-    public MultipleChoiseQuestion getMultipleChoiseQuestion(){
-        MultipleChoiseQuestion mQuestion = new MultipleChoiseQuestion();
+    public MultipleChoiceQuestion getMultipleChoiseQuestion(){
+        MultipleChoiceQuestion mQuestion = new MultipleChoiceQuestion();
         mQuestion.setQuestionText("Do you like this App");
         mQuestion.setQuestionId(354);
         mQuestion.setSequenceNumber(4);
         mQuestion.setAnswersList(new AnswerOptionsMock().getAnswerOptionsList());
+        return mQuestion;
+    }
+
+    public SingleChoiceQuestion getSingleChoiseQuestion(){
+        SingleChoiceQuestion mQuestion = new SingleChoiceQuestion();
+        mQuestion.setQuestionText("Do you like this App");
+        mQuestion.setQuestionId(432);
+        mQuestion.setSequenceNumber(3);
+        mQuestion.setAnswersList(new AnswerOptionsMock().getAnswerOptionsList());
+
         return mQuestion;
     }
 }

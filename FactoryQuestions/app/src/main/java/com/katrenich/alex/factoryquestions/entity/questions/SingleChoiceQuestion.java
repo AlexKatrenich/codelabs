@@ -8,9 +8,18 @@ import com.katrenich.alex.factoryquestions.entity.answers.AnswerOption;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MultipleChoiseQuestion extends Question {
+public class SingleChoiceQuestion extends Question {
     private List<AnswerOption> answersList = new ArrayList<>();
-    private List<AnswerOption> userAnswers = new ArrayList<>();
+    private AnswerOption userAnswer;
+
+
+    public AnswerOption getUserAnswer() {
+        return userAnswer;
+    }
+
+    public void setUserAnswer(AnswerOption userAnswer) {
+        this.userAnswer = userAnswer;
+    }
 
     public List<AnswerOption> getAnswersList() {
         return answersList;
@@ -18,14 +27,6 @@ public class MultipleChoiseQuestion extends Question {
 
     public void setAnswersList(List<AnswerOption> answersList) {
         this.answersList = answersList;
-    }
-
-    public void addUserAnswer(AnswerOption answer){
-        userAnswers.add(answer);
-    }
-
-    public void removeUserAnswer(AnswerOption answerOption){
-        userAnswers.remove(answerOption);
     }
 
     @RequiresApi(api = Build.VERSION_CODES.KITKAT)

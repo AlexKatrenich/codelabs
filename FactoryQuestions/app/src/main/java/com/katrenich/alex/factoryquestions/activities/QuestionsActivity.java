@@ -9,7 +9,7 @@ import android.util.Log;
 import android.view.View;
 
 import com.katrenich.alex.factoryquestions.R;
-import com.katrenich.alex.factoryquestions.fragments.MultiAnswerFragment;
+import com.katrenich.alex.factoryquestions.fragments.MultiChoiceAnswerFragment;
 import com.katrenich.alex.factoryquestions.fragments.QuestionsFragment;
 
 public class QuestionsActivity extends BaseActivity {
@@ -55,7 +55,7 @@ public class QuestionsActivity extends BaseActivity {
         if (savedInstanceState == null){
 
             qListFragment = new QuestionsFragment(); /*Створємо фрагмент для відображення списку запитань*/
-            qMultipleChoiseFragment = new MultiAnswerFragment();
+            qMultipleChoiseFragment = new MultiChoiceAnswerFragment();
 
             getSupportFragmentManager()
                     .beginTransaction()

@@ -7,7 +7,7 @@
     android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/tv_multi_question_number_fragment"
+        android:id="@+id/tv_multi_answer_number_fragment"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="8dp"
@@ -21,7 +21,7 @@
         tools:text="8" />
 
     <TextView
-        android:id="@+id/tv_multi_question_text_fragment"
+        android:id="@+id/tv_multi_answer_text_fragment"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
@@ -32,7 +32,7 @@
         android:singleLine="false"
         android:textColor="@android:color/black"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/tv_multi_question_number_fragment"
+        app:layout_constraintStart_toEndOf="@+id/tv_multi_answer_number_fragment"
         app:layout_constraintTop_toTopOf="parent"
         tools:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat." />
 
@@ -42,13 +42,13 @@
         android:layout_height="372dp"
         android:layout_marginBottom="8dp"
         android:layout_marginTop="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/btn_next_multi_question_fragment"
+        app:layout_constraintBottom_toTopOf="@+id/btn_next_multi_answer_fragment"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_multi_question_text_fragment" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_multi_answer_text_fragment" />
 
     <Button
-        android:id="@+id/btn_prev_multi_question_fragment"
+        android:id="@+id/btn_prev_multi_answer_fragment"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
@@ -58,13 +58,13 @@
         android:textAllCaps="false"
         android:textColor="@android:color/black"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/btn_next_multi_question_fragment"
+        app:layout_constraintEnd_toStartOf="@+id/btn_next_multi_answer_fragment"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintHorizontal_chainStyle="spread_inside"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/btn_next_multi_question_fragment"
+        android:id="@+id/btn_next_multi_answer_fragment"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
@@ -76,6 +76,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/btn_prev_multi_question_fragment" />
+        app:layout_constraintStart_toEndOf="@+id/btn_prev_multi_answer_fragment" />
 
 </android.support.constraint.ConstraintLayout>

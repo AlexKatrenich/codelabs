@@ -52,4 +52,5 @@ public class Questionnaire {
     public void setEmailList(List<String> emailList) {
         this.emailList = emailList;
     }
+
 }
