@@ -6,7 +6,9 @@ import android.widget.AdapterView;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 
-import com.katrenich.alex.factoryquestions.adapters.MultiAnswersListAdapter;
+
+import com.katrenich.alex.factoryquestions.adapters.SingleAnswerListAdapter;
+import com.katrenich.alex.factoryquestions.entity.questions.Question;
 import com.katrenich.alex.factoryquestions.entity.questions.SingleChoiceQuestion;
 import com.katrenich.alex.factoryquestions.testMethodsMock.QuestionsActivityMock;
 
@@ -19,8 +21,9 @@ public class SingleChoiceAnswerFragment extends MultiAnswerFragment {
     protected void setAdapter(View view, ListView answers) {
         lvAnswers = answers;
 
+        mQuestion = (SingleChoiceQuestion) readQuestion();
         /*Адаптер для відображення списку питань*/
-        ListAdapter answersAdapter = new MultiAnswersListAdapter(view.getContext(), mQuestion.getAnswersList());
+        ListAdapter answersAdapter = new SingleAnswerListAdapter(view.getContext(), mQuestion.getAnswersList());
         Log.d(TAG, "init: ListAdapter created");
         lvAnswers.setAdapter(answersAdapter);
 
@@ -28,7 +31,7 @@ public class SingleChoiceAnswerFragment extends MultiAnswerFragment {
     }
 
     @Override
-    protected void readQuestion() {
-        mQuestion = new QuestionsActivityMock().getSingleChoiseQuestion();
+    protected Question readQuestion() {
+        return new QuestionsActivityMock().getSingleChoiseQuestion();
     }
 }

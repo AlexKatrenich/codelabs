@@ -11,6 +11,7 @@ import android.view.View;
 import com.katrenich.alex.factoryquestions.R;
 import com.katrenich.alex.factoryquestions.fragments.MultiChoiceAnswerFragment;
 import com.katrenich.alex.factoryquestions.fragments.QuestionsFragment;
+import com.katrenich.alex.factoryquestions.fragments.SingleChoiceAnswerFragment;
 
 public class QuestionsActivity extends BaseActivity {
     private final String TAG = "QuestionsActivity_";
@@ -55,11 +56,12 @@ public class QuestionsActivity extends BaseActivity {
         if (savedInstanceState == null){
 
             qListFragment = new QuestionsFragment(); /*Створємо фрагмент для відображення списку запитань*/
-            qMultipleChoiseFragment = new MultiChoiceAnswerFragment();
+//            qMultipleChoiseFragment = new MultiChoiceAnswerFragment();
+            qSingleChoiseFragment = new SingleChoiceAnswerFragment();
 
             getSupportFragmentManager()
                     .beginTransaction()
-                    .add(R.id.frm_question_list_fragment, qMultipleChoiseFragment).commit();
+                    .add(R.id.frm_question_list_fragment, qSingleChoiseFragment).commit();
         }
 
     }

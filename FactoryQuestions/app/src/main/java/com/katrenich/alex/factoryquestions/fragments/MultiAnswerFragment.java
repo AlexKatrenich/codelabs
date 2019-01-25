@@ -38,7 +38,7 @@ public abstract class MultiAnswerFragment extends Fragment implements View.OnCli
         super.onViewCreated(view, savedInstanceState);
 
         /*зчитування питання зі списку питань*/
-        readQuestion();
+        mQuestion = readQuestion();
 
         /*Інціалізація полів UI*/
         tvNumbQuestion = view.findViewById(R.id.tv_multi_answer_number_fragment);
@@ -63,7 +63,7 @@ public abstract class MultiAnswerFragment extends Fragment implements View.OnCli
     protected abstract void setAdapter(View view, ListView lvAnswers);
 
     /*Абстрактний метод для зчитування питання та подальшого його відображення в конкретному фрагменті*/
-    protected abstract void readQuestion();
+    protected abstract Question readQuestion();
 
     @Override
     public void onDestroy() {
