@@ -3,6 +3,7 @@ package com.katrenich.alex.factoryquestions.entity.answers;
 import android.graphics.Bitmap;
 import android.icu.util.Calendar;
 
+/* Об'єкт моделі, що відображає відповідь, яку обрав користувач на відповідь в питанні зі списком відповідей*/
 public class SingleAnswer extends Answer {
     private AnswerOption userAnswer;
 
@@ -16,11 +17,6 @@ public class SingleAnswer extends Answer {
 
     public SingleAnswer(int answerID, Calendar answerDate, Bitmap answerPhoto, AnswerOption userAnswer) {
         super(answerID, answerDate, answerPhoto);
-        this.userAnswer = userAnswer;
-    }
-
-    public SingleAnswer(int answerID, Calendar answerDate, Bitmap answerPhoto, String value, AnswerOption userAnswer) {
-        super(answerID, answerDate, answerPhoto, value);
         this.userAnswer = userAnswer;
     }
 

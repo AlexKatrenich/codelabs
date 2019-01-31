@@ -6,10 +6,12 @@ import android.icu.util.Calendar;
 import java.util.ArrayList;
 import java.util.List;
 
+/* Об'єкт моделі, що відображає список відповідей, які обрав користувач для відповіді на запитання*/
 public class MultipleAnswer extends Answer {
     private List<AnswerOption> answers = new ArrayList<>(); /*список з відповідями, що обрав користувач*/
 
     public MultipleAnswer(){
+
     }
 
     public MultipleAnswer(List<AnswerOption> answers) {
@@ -18,11 +20,6 @@ public class MultipleAnswer extends Answer {
 
     public MultipleAnswer(int answerID, Calendar answerDate, Bitmap answerPhoto, List<AnswerOption> answers) {
         super(answerID, answerDate, answerPhoto);
-        this.answers = answers;
-    }
-
-    public MultipleAnswer(int answerID, Calendar answerDate, Bitmap answerPhoto, String value, List<AnswerOption> answers) {
-        super(answerID, answerDate, answerPhoto, value);
         this.answers = answers;
     }
 

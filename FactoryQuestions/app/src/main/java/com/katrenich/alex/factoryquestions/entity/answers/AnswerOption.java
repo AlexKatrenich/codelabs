@@ -5,6 +5,8 @@ import android.support.annotation.RequiresApi;
 
 import java.util.Objects;
 
+/* Клас створений для відображення об'єкту моделі, що відповідає за варіанти відповідей для відображення в запитаннях
+ * зі списком відповідей*/
 public class AnswerOption {
     private int answerOptionID; /*ІД в таблиці відповідей БД*/
     private String answerText; /*текст відповіді*/
