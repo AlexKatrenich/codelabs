@@ -1,8 +1,9 @@
 package com.katrenich.alex.factoryquestions.testMethodsMock;
 
+import com.katrenich.alex.factoryquestions.entity.answers.UserAnswerType;
 import com.katrenich.alex.factoryquestions.entity.questions.MultipleChoiceQuestion;
 import com.katrenich.alex.factoryquestions.entity.questions.Question;
-import com.katrenich.alex.factoryquestions.entity.questions.SingleChoiceQuestion;
+import com.katrenich.alex.factoryquestions.entity.questions.StringFieldQuestion;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -33,8 +34,28 @@ public class QuestionsActivityMock {
         return qList;
     }
 
+    public List<Question> getDifferentTypeQuestionList() {
+        qList = new ArrayList<>(10);
+        qList.add(new MultipleChoiceQuestion());
+
+        return qList;
+    }
+
+    public StringFieldQuestion getQuestionCustomAnswer(UserAnswerType type){
+        switch (type){
+            case INTANSWER:
+                return new StringFieldQuestion(12, 1, "How old are you?", UserAnswerType.INTANSWER);
+            case DOUBLEANSWER:
+                return new StringFieldQuestion(15, 1, "What is the value of Pi?", UserAnswerType.DOUBLEANSWER);
+            case STRINGANSWER:
+                return new StringFieldQuestion(17, 1, "What are you name?", UserAnswerType.STRINGANSWER);
+            default:
+                return new StringFieldQuestion(17, 1, "What are you name?", UserAnswerType.STRINGANSWER);
+        }
+    }
+
     /*метод повертає заповнений об'єкт питання з багатьма відповідями(AnswerOption)*/
-    public MultipleChoiceQuestion getMultipleChoiseQuestion(){
+    public MultipleChoiceQuestion getMultipleChoiceQuestion(){
         MultipleChoiceQuestion mQuestion = new MultipleChoiceQuestion();
         mQuestion.setQuestionText("Do you like this App");
         mQuestion.setQuestionId(354);
@@ -43,13 +64,4 @@ public class QuestionsActivityMock {
         return mQuestion;
     }
 
-    public SingleChoiceQuestion getSingleChoiseQuestion(){
-        SingleChoiceQuestion mQuestion = new SingleChoiceQuestion();
-        mQuestion.setQuestionText("Do you like this App");
-        mQuestion.setQuestionId(432);
-        mQuestion.setSequenceNumber(3);
-        mQuestion.setAnswersList(new AnswerOptionsMock().getAnswerOptionsList());
-
-        return mQuestion;
-    }
 }

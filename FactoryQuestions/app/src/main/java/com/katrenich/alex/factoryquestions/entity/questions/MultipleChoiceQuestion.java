@@ -9,8 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MultipleChoiceQuestion extends Question {
-    private List<AnswerOption> answersList = new ArrayList<>();
-    private List<AnswerOption> userAnswers = new ArrayList<>();
+    private List<AnswerOption> answersList = new ArrayList<>(); /*Список варіантів відповіді, що буде відображатись користувачеві для вибору*/
 
     public List<AnswerOption> getAnswersList() {
         return answersList;
@@ -18,14 +17,6 @@ public class MultipleChoiceQuestion extends Question {
 
     public void setAnswersList(List<AnswerOption> answersList) {
         this.answersList = answersList;
-    }
-
-    public void addUserAnswer(AnswerOption answer){
-        userAnswers.add(answer);
-    }
-
-    public void removeUserAnswer(AnswerOption answerOption){
-        userAnswers.remove(answerOption);
     }
 
     @RequiresApi(api = Build.VERSION_CODES.KITKAT)

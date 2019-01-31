@@ -12,6 +12,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.katrenich.alex.factoryquestions.R;
+import com.katrenich.alex.factoryquestions.entity.questions.Questionnaire;
 
 import java.util.List;
 
@@ -20,9 +21,9 @@ public class QuestionariesListAdapter extends BaseAdapter implements AdapterView
     private static final String TAG = "QuestionariesAdapter_";
     private Context mContext;
     LayoutInflater mLInflater;
-    List<String> mList;
+    List<Questionnaire> mList;
 
-    public QuestionariesListAdapter(Context context, List<String> list) {
+    public QuestionariesListAdapter(Context context, List<Questionnaire> list) {
         mContext = context;
         mList = list;
         mLInflater = (LayoutInflater) mContext
@@ -61,7 +62,7 @@ public class QuestionariesListAdapter extends BaseAdapter implements AdapterView
         // заповнюємо View з отриманого списку mList
         ((TextView)view.findViewById(R.id.tv_questionnaire_number)).setText(String.valueOf(position));
 
-        ((TextView)view.findViewById(R.id.tv_questionnaire_title)).setText(mList.get(position));
+        ((TextView)view.findViewById(R.id.tv_questionnaire_title)).setText(mList.get(position).getCaption());
         return view;
     }
 
@@ -69,7 +70,7 @@ public class QuestionariesListAdapter extends BaseAdapter implements AdapterView
     /*В адаптері реалізовано обробку itemClick на View*/
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        String mTitle = mList.get(position);
+        String mTitle = mList.get(position).getCaption();
         Toast.makeText(mContext, "Click on title: " + mTitle, Toast.LENGTH_LONG).show();
     }
 

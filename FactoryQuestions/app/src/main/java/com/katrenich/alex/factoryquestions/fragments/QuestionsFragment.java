@@ -13,6 +13,7 @@ import android.view.ViewGroup;
 import com.katrenich.alex.factoryquestions.R;
 import com.katrenich.alex.factoryquestions.adapters.QuestionsRecycleListAdapter;
 
+/* Клас для контролю та відображення на екрані моделі питання(Question)*/
 public class QuestionsFragment extends Fragment {
     private final String TAG = "QuestionsFragment_";
     private RecyclerView questionRecView;

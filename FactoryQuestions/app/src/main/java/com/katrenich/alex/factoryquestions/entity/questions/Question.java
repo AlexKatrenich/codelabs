@@ -4,7 +4,7 @@ import android.os.Build;
 import android.support.annotation.RequiresApi;
 
 import java.util.Objects;
-
+/*Клас, що відображає модель питання. Батьківський клас, який має основні характеристики питання*/
 public class Question {
     private int questionId; /*ІД питання в таблиці БД*/
     private String questionText; /*Текст запитання*/

@@ -19,12 +19,12 @@
         android:singleLine="false"
         android:textColor="@android:color/black"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/tv_question_number_fragment"
+        app:layout_constraintStart_toEndOf="@+id/tv_numb_question_custom_question_fragment"
         app:layout_constraintTop_toTopOf="parent"
         tools:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat." />
 
     <TextView
-        android:id="@+id/tv_question_number_fragment"
+        android:id="@+id/tv_numb_question_custom_question_fragment"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="8dp"

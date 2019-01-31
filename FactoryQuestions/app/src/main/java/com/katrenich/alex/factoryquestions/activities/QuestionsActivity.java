@@ -9,6 +9,7 @@ import android.util.Log;
 import android.view.View;
 
 import com.katrenich.alex.factoryquestions.R;
+import com.katrenich.alex.factoryquestions.fragments.CustomUserAnswerFragment;
 import com.katrenich.alex.factoryquestions.fragments.MultiChoiceAnswerFragment;
 import com.katrenich.alex.factoryquestions.fragments.QuestionsFragment;
 import com.katrenich.alex.factoryquestions.fragments.SingleChoiceAnswerFragment;
@@ -19,9 +20,8 @@ public class QuestionsActivity extends BaseActivity {
     private Fragment qListFragment,
             qSingleChoiseFragment,
             qMultipleChoiseFragment,
-            qStringAnswerFragment,
-            qDoubleAnswerFragment,
-            qIntAnswerFragment;
+            qCustomAnswerFragment;
+
     private FragmentTransaction fTrans;
 
     @Override
@@ -57,11 +57,12 @@ public class QuestionsActivity extends BaseActivity {
 
             qListFragment = new QuestionsFragment(); /*Створємо фрагмент для відображення списку запитань*/
 //            qMultipleChoiseFragment = new MultiChoiceAnswerFragment();
-            qSingleChoiseFragment = new SingleChoiceAnswerFragment();
+//            qSingleChoiseFragment = new SingleChoiceAnswerFragment();
+            qCustomAnswerFragment = new CustomUserAnswerFragment();
 
             getSupportFragmentManager()
                     .beginTransaction()
-                    .add(R.id.frm_question_list_fragment, qSingleChoiseFragment).commit();
+                    .add(R.id.frm_question_list_fragment, qCustomAnswerFragment).commit();
         }
 
     }

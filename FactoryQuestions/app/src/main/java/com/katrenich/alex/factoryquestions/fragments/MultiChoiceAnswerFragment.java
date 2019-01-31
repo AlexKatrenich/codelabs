@@ -7,10 +7,8 @@ import android.widget.ListAdapter;
 import android.widget.ListView;
 
 import com.katrenich.alex.factoryquestions.adapters.MultiAnswersListAdapter;
-import com.katrenich.alex.factoryquestions.entity.answers.MultipleAnswer;
 import com.katrenich.alex.factoryquestions.entity.questions.MultipleChoiceQuestion;
 import com.katrenich.alex.factoryquestions.entity.questions.Question;
-import com.katrenich.alex.factoryquestions.entity.questions.SingleChoiceQuestion;
 import com.katrenich.alex.factoryquestions.testMethodsMock.QuestionsActivityMock;
 
 /* Клас для відображення питання зі списком варіантів відповідей та можливістю обирання декількох відповідей зі списку*/
@@ -36,7 +34,7 @@ public class MultiChoiceAnswerFragment extends MultiAnswerFragment {
 
     @Override
     protected Question readQuestion() {
-        return new QuestionsActivityMock().getMultipleChoiseQuestion();
+        return new QuestionsActivityMock().getMultipleChoiceQuestion();
     }
 
 

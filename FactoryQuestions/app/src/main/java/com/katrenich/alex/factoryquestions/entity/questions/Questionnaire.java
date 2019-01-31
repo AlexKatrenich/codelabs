@@ -2,21 +2,23 @@ package com.katrenich.alex.factoryquestions.entity.questions;
 
 import java.util.List;
 
+/* Клас, що відображає модель "Опитувальник". Кожна група користувачів має свій перелік опитувальників*/
 public class Questionnaire {
-    private int questionnaireId;
-    private List<Question> qList;
-    private int questionOrder;
-    private List<String> emailList;
+    private int questionnaireId; /*Ідентифікатор моделі в БД*/
+    private List<Question> qList; /*Список питань(Question) в опитувальнику*/
+    private List<String> emailList; /*Список е-мейлів для розсилки(при завершенні опитувальника користувачем,
+                                       потрібно відправляти результат за вказаним списком емейлів)*/
+    private String mCaption; /*Назва опитувальника*/
 
     public Questionnaire() {
 
     }
 
-    public Questionnaire(int questionnaireId, List<Question> qList, int questionOrder, List<String> emailList) {
+    public Questionnaire(int questionnaireId, String mCaption, List<Question> qList, List<String> emailList) {
         this.questionnaireId = questionnaireId;
         this.qList = qList;
-        this.questionOrder = questionOrder;
         this.emailList = emailList;
+        this.mCaption = mCaption;
     }
 
 
@@ -37,14 +39,6 @@ public class Questionnaire {
         this.qList = qList;
     }
 
-    public int getQuestionOrder() {
-        return questionOrder;
-    }
-
-    public void setQuestionOrder(int questionOrder) {
-        this.questionOrder = questionOrder;
-    }
-
     public List<String> getEmailList() {
         return emailList;
     }
@@ -53,4 +47,11 @@ public class Questionnaire {
         this.emailList = emailList;
     }
 
+    public String getCaption() {
+        return mCaption;
+    }
+
+    public void setCaption(String mCaption) {
+        this.mCaption = mCaption;
+    }
 }

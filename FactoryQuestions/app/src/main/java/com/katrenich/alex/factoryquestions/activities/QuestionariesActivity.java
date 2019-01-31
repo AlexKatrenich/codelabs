@@ -13,6 +13,7 @@ import android.widget.Toast;
 
 import com.katrenich.alex.factoryquestions.R;
 import com.katrenich.alex.factoryquestions.adapters.QuestionariesListAdapter;
+import com.katrenich.alex.factoryquestions.entity.questions.Questionnaire;
 import com.katrenich.alex.factoryquestions.testMethodsMock.QuestionariesActivityMock;
 
 import java.util.List;
@@ -66,8 +67,8 @@ public class QuestionariesActivity extends BaseActivity {
 
     /*Метод для отримання списку з назвами опитувальників*/
     @Nullable
-    private List<String> getQuestionariesList() {
-        List<String> list;
+    private List<Questionnaire> getQuestionariesList() {
+        List<Questionnaire> list;
 
         /*Заповнення списку тестовими даними, заглушка на back-end*/
         list = new QuestionariesActivityMock().getQuestionariesList();

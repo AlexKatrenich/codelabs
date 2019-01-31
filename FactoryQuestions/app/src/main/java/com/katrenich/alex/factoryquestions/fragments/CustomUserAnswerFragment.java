@@ -5,6 +5,7 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.design.widget.TextInputEditText;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,17 +14,22 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.katrenich.alex.factoryquestions.R;
+import com.katrenich.alex.factoryquestions.entity.answers.CustomUserAnswer;
+import com.katrenich.alex.factoryquestions.entity.answers.UserAnswerType;
 import com.katrenich.alex.factoryquestions.entity.questions.StringFieldQuestion;
+import com.katrenich.alex.factoryquestions.testMethodsMock.QuestionsActivityMock;
 
 /* Клас(фрагмент) для відображення питання з полем для вводу відповіді користувача, відповідь може бути
  * числова
  * текстова */
 
 public class CustomUserAnswerFragment extends Fragment implements View.OnClickListener {
+    private static final String TAG = "CustomUserAnswer_";
     private TextView tvQuestionNumber, tvQuestionText;
     private TextInputEditText uAnswer;
     private Button btnNext, btnPrev;
     private StringFieldQuestion mQuestion;
+    private CustomUserAnswer mAnswer;
 
     @Nullable
     @Override
@@ -39,9 +45,9 @@ public class CustomUserAnswerFragment extends Fragment implements View.OnClickLi
         mQuestion = readQuestion();
 
         /* Ініціалізація елементів UI*/
-        tvQuestionNumber = view.findViewById(R.id.tv_question_number_fragment);
+        tvQuestionNumber = view.findViewById(R.id.tv_numb_question_custom_question_fragment);
         tvQuestionNumber.setText(String.valueOf(mQuestion.getSequenceNumber()));
-
+        Log.d(TAG, "onViewCreated: ");
         tvQuestionText = view.findViewById(R.id.tv_question_text);
         tvQuestionText.setText(mQuestion.getQuestionText());
 
@@ -57,7 +63,7 @@ public class CustomUserAnswerFragment extends Fragment implements View.OnClickLi
 
     /* метод для зчитування питання(Question) яке потрібно відобразити на UI*/
     private StringFieldQuestion readQuestion() {
-        return null;
+        return (new QuestionsActivityMock()).getQuestionCustomAnswer(UserAnswerType.STRINGANSWER);
     }
 
     @Override
@@ -66,6 +72,11 @@ public class CustomUserAnswerFragment extends Fragment implements View.OnClickLi
         btnNext.setOnClickListener(null);
         super.onDestroy();
     }
+
+    private void setUserAnswer(CustomUserAnswer userAnswer){
+        mAnswer = userAnswer;
+    }
+
 
     @Override
     public void onClick(View v) {
