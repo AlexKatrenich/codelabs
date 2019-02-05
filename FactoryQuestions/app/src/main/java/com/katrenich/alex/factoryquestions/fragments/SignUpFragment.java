@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.design.widget.TextInputEditText;
+import android.support.design.widget.TextInputLayout;
 import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -50,6 +51,7 @@ public class SignUpFragment extends Fragment implements View.OnClickListener{
 
     // Змінні для ініціалізації полів фрагменту
     private TextInputEditText etFullName, etEmail, etPassword, etPassConfirm;
+    private TextInputLayout tilFullname, tilEmail, tilPassword, tilPassConfirm;
     private Spinner spinGroupList;
     private Button btnRegistration;
 
@@ -74,6 +76,11 @@ public class SignUpFragment extends Fragment implements View.OnClickListener{
         etPassConfirm = v.findViewById(R.id.tiet_pas_reg_confirm_data);
         btnRegistration = v.findViewById(R.id.btn_reg);
         btnRegistration.setOnClickListener(this);
+
+        tilEmail = v.findViewById(R.id.til_email_reg_holder);
+        tilFullname = v.findViewById(R.id.til_full_name_reg_holder);
+        tilPassConfirm = v.findViewById(R.id.til_pas_reg_confirm_holder);
+        tilPassword = v.findViewById(R.id.til_pas_reg_holder);
         Log.d(TAG, "init: etFullName, etEmail, etPassword, etPassConfirm, btnRegistration");
 
         // ініціалізація випадаючого списка
@@ -91,7 +98,6 @@ public class SignUpFragment extends Fragment implements View.OnClickListener{
         spinGroupList.setAdapter(spinnerAdapter);
         spinGroupList.setSelection(0); // задаємо позицію списку для відображення по замовчуванню
     }
-
 
     @Override
     public void onClick(View v) {
@@ -116,9 +122,6 @@ public class SignUpFragment extends Fragment implements View.OnClickListener{
                         + "\nUser password confirm : " + etPassConfirm.getText().toString()
                         + "\nGroup : " + spinnerTestData.get((int) spinGroupList.getSelectedItemId()), Toast.LENGTH_SHORT).show();
             }
-
-
-
         }
     }
 
@@ -129,28 +132,28 @@ public class SignUpFragment extends Fragment implements View.OnClickListener{
         // перевіряємо Full Name користувача на валідність
         if (!Pattern.compile(USER_FULLNAME_PATTERN).matcher(userFullName).matches()){
             valid = false;
-            etFullName.setError("Incorrect full name");
+            tilFullname.setError("Incorrect full name");
             Log.d(TAG, "validateFields: User Full name is not valid");
         }
 
         // перевіряємо емейл на валідність
         if (!Pattern.compile(EMAIL_PATTERN).matcher(userEmail).matches()){
             valid = false;
-            etEmail.setError("Incorrect email");
+            tilEmail.setError("Incorrect email");
             Log.d(TAG, "validateFields: Email is not valid");
         }
 
         // перевіряємо пароль на валідність
         if (!Pattern.compile(PASSWORD_PATTERN).matcher(userPassword).matches()){
             valid = false;
-            etPassword.setError("Password must contain at least 2 letters or numbers");
+            tilPassword.setError("Password must contain at least 2 letters or numbers");
             Log.d(TAG, "validateFields: Password is not valid");
         }
 
         // перевіряємо пароль та підтвердження на збіг
         if (!userPassword.equals(etPassConfirm.getText().toString())){
             valid = false;
-            etPassConfirm.setError("Password and confirm password must be same");
+            tilPassConfirm.setError("Password and confirm password must be same");
             Log.d(TAG, "validateFields: Password not equals password confirm");
         }
 
@@ -162,13 +165,11 @@ public class SignUpFragment extends Fragment implements View.OnClickListener{
 
             Activity activity = this.getActivity();
             if(activity != null){
-
                 Toast.makeText(activity, "Please choose your group", Toast.LENGTH_LONG).show();
             }
 
             Log.d(TAG, "validateFields: Group not was chosen");
         }
-
 
         return valid;
     }
