@@ -2,6 +2,7 @@ package com.katrenich.alex.factoryquestions.activities;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v4.util.ArrayMap;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.MenuItem;
@@ -18,7 +19,7 @@ import com.katrenich.alex.factoryquestions.testMethodsMock.QuestionariesActivity
 
 import java.util.List;
 
-public class QuestionariesActivity extends BaseActivity {
+public class QuestionnairesActivity extends BaseActivity {
     private final String TAG = "QuestionariesActivity_";
     private Toolbar mToolbar;
     private ListView questionariesList;
@@ -33,7 +34,7 @@ public class QuestionariesActivity extends BaseActivity {
     }
 
 
-    // метод для инициализации обектов Активити
+    // метод для ініціалізації об'єктів Активності
     private void init(){
         // инициализация тулбара
         mToolbar = findViewById(R.id.toolbar_questions_list);
@@ -55,24 +56,24 @@ public class QuestionariesActivity extends BaseActivity {
         questionariesList = findViewById(R.id.lv_questionaries);
 
         /*Використовується ArrayAdapter для listView*/
-        ListAdapter questionariesListAdapter = new QuestionariesListAdapter(this, getQuestionariesList());
+        ListAdapter listAdapter = new QuestionariesListAdapter(this, getQuestionnairesList());
         Log.d(TAG, "init: ArrayAdapter");
 
-        questionariesList.setAdapter(questionariesListAdapter);
-        Log.d(TAG, "init: questionariesList.setAdapter(questionariesListAdapter)");
+        questionariesList.setAdapter(listAdapter);
+        Log.d(TAG, "init: questionariesList.setAdapter(listAdapter)");
 
         /*Задаємо слухач для обробки кліку по елементу списку*/
-        questionariesList.setOnItemClickListener((AdapterView.OnItemClickListener) questionariesListAdapter);
+        questionariesList.setOnItemClickListener((AdapterView.OnItemClickListener) listAdapter);
     }
 
     /*Метод для отримання списку з назвами опитувальників*/
     @Nullable
-    private List<Questionnaire> getQuestionariesList() {
+    private List<Questionnaire> getQuestionnairesList() {
         List<Questionnaire> list;
 
         /*Заповнення списку тестовими даними, заглушка на back-end*/
         list = new QuestionariesActivityMock().getQuestionariesList();
-        Log.d(TAG, "getQuestionariesList: QuestionariesActivityMock().getQuestionariesList()");
+        Log.d(TAG, "getQuestionnariesList: QuestionariesActivityMock().getQuestionnairesList()");
         return list;
     }
 
@@ -84,6 +85,7 @@ public class QuestionariesActivity extends BaseActivity {
     @Override
     public boolean onNavigateUp(){
         Toast.makeText(this, "click back", Toast.LENGTH_SHORT).show();
+        Log.d(TAG, "onNavigateUp: click on back arrow");
         finish();
         return true;
     }

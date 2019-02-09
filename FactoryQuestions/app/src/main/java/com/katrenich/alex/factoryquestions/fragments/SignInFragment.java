@@ -15,7 +15,8 @@ import android.widget.Toast;
 
 import com.katrenich.alex.factoryquestions.*;
 import com.katrenich.alex.factoryquestions.activities.BaseActivity;
-import com.katrenich.alex.factoryquestions.activities.QuestionariesActivity;
+import com.katrenich.alex.factoryquestions.activities.QuestionnairesActivity;
+import com.katrenich.alex.factoryquestions.entity.managers.UserAuthManager;
 
 import java.util.regex.Pattern;
 
@@ -31,7 +32,7 @@ public class SignInFragment extends Fragment implements View.OnClickListener{
 
     //змінні для ініціалізації вкладених елементів фрагмента
     private TextInputEditText etEmail, etPassword;
-    private Button signButton;
+    private Button btnSignIn;
 
     @Nullable
     @Override
@@ -49,8 +50,8 @@ public class SignInFragment extends Fragment implements View.OnClickListener{
     private void init(View v) {
         etEmail = v.findViewById(R.id.tiet_email_sign_in_data);
         etPassword = v.findViewById(R.id.tiet_pas_sign_in_data);
-        signButton = v.findViewById(R.id.btn_sign_in);
-        signButton.setOnClickListener(this);
+        btnSignIn = v.findViewById(R.id.btn_sign_in);
+        btnSignIn.setOnClickListener(this);
         Log.d(TAG, "init: initialize all view elements");
     }
 
@@ -67,15 +68,20 @@ public class SignInFragment extends Fragment implements View.OnClickListener{
                 activity.hideKeyboard(v);
             }
 
+
             String userEmail = etEmail.getText().toString();
             Log.d(TAG, "onClick: get user email to Variable");
             String userPassword = etPassword.getText().toString();
             Log.d(TAG, "onClick: get user password to Variable");
 
-            if (validateEmail(userEmail) && checkUserAuth(userEmail, userPassword)){
+            /* Перевірка валідності введених даних та чи відповідають вони даним БД для авторизації*/
+            if (validateEmail(userEmail) && UserAuthManager
+                    .getUserAuthManager(v.getContext())
+                    .checkUserAuth(userEmail, userPassword)){
+
                 // Тут робимо перехід на екран зі списком опитувальників
-                Intent intent = new Intent(v.getContext(), QuestionariesActivity.class);
-                Log.d(TAG, "onClick: new Intent(v.getContext(), QuestionariesActivity.class)");
+                Intent intent = new Intent(v.getContext(), QuestionnairesActivity.class);
+                Log.d(TAG, "onClick: new Intent(v.getContext(), QuestionnairesActivity.class)");
                 startActivity(intent);
                 // Знищуємо поточний фрагмент, щоб до нього не повертатись
                 onDestroy();
@@ -91,13 +97,6 @@ public class SignInFragment extends Fragment implements View.OnClickListener{
         }
     }
 
-
-    // метод для перевірки логіна та пароля по базі даних для авторизації користувача
-    private boolean checkUserAuth(String userEmail, String userPassword) {
-        // Тут потрібно зробити перевірку співпадіння логіну та паролю по базі даних
-
-        return true;
-    }
 
 
     // метод перевірки Емейл на валідність
