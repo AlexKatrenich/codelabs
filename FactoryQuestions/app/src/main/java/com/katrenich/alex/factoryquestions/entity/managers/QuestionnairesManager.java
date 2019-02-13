@@ -1,13 +1,14 @@
 package com.katrenich.alex.factoryquestions.entity.managers;
 
 import android.content.Context;
+import android.util.ArrayMap;
 
 import com.katrenich.alex.factoryquestions.entity.questions.Questionnaire;
 
 /* Клас Singleton для управління опитувальниками */
 public class QuestionnairesManager {
     private static QuestionnairesManager manager;
-    private Questionnaire mQuestionnaire;
+    private ArrayMap<Integer, Questionnaire> listQuestionaires;
 
 
     private QuestionnairesManager(Context context){}
@@ -20,12 +21,11 @@ public class QuestionnairesManager {
         return manager;
     }
 
-    public Questionnaire getQuestionnaire() {
-        return mQuestionnaire;
+    public ArrayMap<Integer, Questionnaire> getListQuestionaires() {
+        return listQuestionaires;
     }
 
-    public void setQuestionnaire(Questionnaire mQuestionnaire) {
-        this.mQuestionnaire = mQuestionnaire;
+    public void setListQuestionaires(ArrayMap<Integer, Questionnaire> listQuestionaires) {
+        this.listQuestionaires = listQuestionaires;
     }
-
 }

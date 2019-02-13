@@ -11,7 +11,7 @@ import com.katrenich.alex.factoryquestions.entity.questions.Question;
 public class QuestionsListManager {
     private static final String TAG = "QuestionsListManager_";
     private static QuestionsListManager sQuestionsListManager;
-    private ArrayMap<Integer,Question> sQuestions;
+    private ArrayMap<Integer, Question> sQuestions;
 
     private QuestionsListManager(Context context){
 
@@ -45,7 +45,7 @@ public class QuestionsListManager {
         return null;
     }
 
-    public boolean setQuestion(Question question){
+    public boolean putQuestion(Question question){
         if (sQuestions!=null){
             sQuestions.put(question.getQuestionId(), question);
             Log.d(TAG, "setQuestion: true");

@@ -14,6 +14,11 @@ public class Questionnaire {
 
     }
 
+    public Questionnaire(int questionnaireId, String mCaption){
+        this.questionnaireId = questionnaireId;
+        this.qList = qList;
+    }
+
     public Questionnaire(int questionnaireId, String mCaption, List<Question> qList, List<String> emailList) {
         this.questionnaireId = questionnaireId;
         this.qList = qList;
