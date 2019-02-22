@@ -3,7 +3,6 @@ package com.katrenich.alex.factoryquestions.activities;
 import android.annotation.TargetApi;
 import android.os.Build;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.support.v7.widget.Toolbar;
 import android.util.ArrayMap;
 import android.util.Log;
@@ -15,7 +14,7 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 import com.katrenich.alex.factoryquestions.R;
-import com.katrenich.alex.factoryquestions.adapters.QuestionariesListAdapter;
+import com.katrenich.alex.factoryquestions.adapters.QuestionnairesListAdapter;
 import com.katrenich.alex.factoryquestions.entity.managers.QuestionnairesManager;
 import com.katrenich.alex.factoryquestions.entity.questions.Questionnaire;
 import com.katrenich.alex.factoryquestions.testMethodsMock.QuestionariesActivityMock;
@@ -24,7 +23,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class QuestionnairesActivity extends BaseActivity {
-    private final String TAG = "QuestionariesActivity_";
+    private final String TAG = "QuestionnairesActivity_";
     private Toolbar mToolbar;
     private ListView questionnairesList;
     private List<Questionnaire> list;
@@ -36,6 +35,7 @@ public class QuestionnairesActivity extends BaseActivity {
         setContentView(R.layout.activity_questionaries);
 
         init();
+
     }
 
     // метод для ініціалізації об'єктів Активності
@@ -61,11 +61,14 @@ public class QuestionnairesActivity extends BaseActivity {
 
         /*Використовується ArrayAdapter для listView*/
         ListAdapter listAdapter;
+
+
+
         if(getQuestionnairesList()){
-            listAdapter = new QuestionariesListAdapter(this, list);
+            listAdapter = new QuestionnairesListAdapter(this, list);
             Log.d(TAG, "init: ArrayAdapter with full list of questions");
         } else {
-            listAdapter = new QuestionariesListAdapter(this, new ArrayList<Questionnaire>());
+            listAdapter = new QuestionnairesListAdapter(this, new ArrayList<Questionnaire>());
             Log.d(TAG, "init: ArrayAdapter with empty list of questions" );
         }
 
@@ -85,8 +88,13 @@ public class QuestionnairesActivity extends BaseActivity {
          * - пуста, заповнюємо список з БД
          * - заповнена, використовуємо її список*/
         if (qList != null){
-            list = (ArrayList) qList.values();
-            return true;
+            try{
+                list = (ArrayList) qList.values();
+                return true;
+            } catch (Exception e){
+                e.printStackTrace();
+                return false;
+            }
         } else {
             showProgressDialog();
             /*Заповнення списку тестовими даними, заглушка на back-end*/

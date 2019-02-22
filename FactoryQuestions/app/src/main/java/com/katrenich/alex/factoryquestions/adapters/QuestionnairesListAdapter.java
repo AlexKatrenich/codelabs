@@ -17,13 +17,13 @@ import com.katrenich.alex.factoryquestions.entity.questions.Questionnaire;
 import java.util.List;
 
 
-public class QuestionariesListAdapter extends BaseAdapter implements AdapterView.OnItemClickListener{
-    private static final String TAG = "QuestionariesAdapter_";
+public class QuestionnairesListAdapter extends BaseAdapter implements AdapterView.OnItemClickListener{
+    private static final String TAG = "QuestionnairesAdapter_";
     private Context mContext;
     LayoutInflater mLInflater;
     List<Questionnaire> mList;
 
-    public QuestionariesListAdapter(Context context, List<Questionnaire> list) {
+    public QuestionnairesListAdapter(Context context, List<Questionnaire> list) {
         mContext = context;
         mList = list;
         mLInflater = (LayoutInflater) mContext
@@ -73,5 +73,4 @@ public class QuestionariesListAdapter extends BaseAdapter implements AdapterView
         String mTitle = mList.get(position).getCaption();
         Toast.makeText(mContext, "Click on title: " + mTitle, Toast.LENGTH_LONG).show();
     }
-
 }
